@@ -6,7 +6,7 @@ SQL 是一种专用编程语言，用于管理关系数据库管理系统（RDMS
 
 - 数据定义语言（DDL）：DDL 包括用于创建表，删除表或创建和删除数据库的其他方面的命令。
 
-- 数据操作语言（DML）：DML 包括用于查询和修改数据库的命令。 它包括用于查询数据库的 select 语句，以及用于修改数据库的 insert，update 和 delete 语句。
+- 数据操作语言（DML）：DML 包括用于查询和修改数据库的命令。它包括用于查询数据库的 select 语句，以及用于修改数据库的 insert，update 和 delete 语句。
 
 ```sql
 SELECT
