@@ -18,7 +18,3 @@
 - 内存管理器(Memory manager)：当你需要处理大量内存数据或大量查询，一个高效的内存管理器是必须的。
 - 安全管理器(Security manager)：进行认证和用户认证管理。
 - 客户端管理器(Client manager)：进行客户端连接管理。
-
-# 链接
-
-- 持久链接：[关系型数据库理论 https://url.wx-coder.cn/DJNQn ](https://url.wx-coder.cn/DJNQn)
