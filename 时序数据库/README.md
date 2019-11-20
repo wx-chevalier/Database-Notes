@@ -1,8 +1,16 @@
 # 时序数据库
 
-维基百科对于时序数据库的定义如下：
+什么是时间序列数据库，最简单的定义就是数据格式里包含 Timestamp 字段的数据，比如某一时间环境的温度，CPU 的使用率等。维基百科对于时序数据库的定义如下：
 
 > A time series database (TSDB) is a software system that is optimized for handling time series data, arrays of numbers indexed by time (a datetime or a datetime range).
+
+时间序列数据的更重要的一个属性是如何去查询它，包括数据的过滤，计算等等。一般时间序列数据都具备如下两个特点：
+
+- 数据结构简单，所谓的结构简单，可以理解为某一度量指标在某一时间点只会有一个值，没有复杂的结构（嵌套、层次等）和关系（关联、主外键等）。
+
+- 数据量大，数据量大则是另一个重要特点，这是由于时间序列数据由所监控的大量数据源来产生、收集和发送，比如主机、物联网设备、终端或 App 等。
+
+# 背景特性
 
 可以把它拆解成 3 个方面来看：时序特性，数据特性，数据库特性。
 

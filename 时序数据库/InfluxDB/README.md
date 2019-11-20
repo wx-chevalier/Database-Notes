@@ -1,12 +1,10 @@
+![InfluxDB 架构图](https://s2.ax1x.com/2019/11/20/MWuNZQ.md.png)
+
 # InfluxDB
 
+InfluxDB 是一个由 InfluxData 开发的开源时序型数据库。它由 Go 写成，着力于高性能地查询与存储时序型数据。InfluxDB 被广泛应用于存储系统的监控数据，它还是没有额外依赖的开源时序数据库，用于记录 metrics、events，进行数据分析。
+
 # 背景特性
-
-## 数据模型
-
-在 InfluxDB 中，时序数据支持多值模型，它的一条典型的时间点数据如下所示：
-
-![InfluxDB 数据模型](https://s2.ax1x.com/2019/11/20/MWi1n1.png)
 
 ## 存储引擎的演进
 
