@@ -1,5 +1,7 @@
 # Redis
 
+![Redis 非阻塞与多线程模型对比](https://s2.ax1x.com/2019/11/25/MvR524.png)
+
 # 链接
 
 - https://zhuanlan.zhihu.com/p/68694458
