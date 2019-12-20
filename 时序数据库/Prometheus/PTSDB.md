@@ -57,7 +57,7 @@ WAL 有 3 种编码格式：时间线，数据点，以及删除点。总体策�
 
 ## 元数据文件
 
-meta.json 文件记录了 Chunks 的具体信息, 比如新的 compactin chunk 来自哪几个小的 chunk。 这个 chunk 的统计信息，比如：最小最大时间范围，时间线，数据点个数等等。
+meta.json 文件记录了 Chunks 的具体信息, 比如新的 compactin chunk 来自哪几个小的 chunk。这个 chunk 的统计信息，比如：最小最大时间范围，时间线，数据点个数等等。
 
 compaction 线程根据统计信息判断该 blocks 是否可以做 compact：（maxTime-minTime）占整体压缩时间范围的 50%， 删除的时间线数量占总体数量的 5%。
 
