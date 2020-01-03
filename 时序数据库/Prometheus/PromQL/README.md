@@ -1,8 +1,6 @@
 # PromQL
 
-Promethues 的查询语言是 PromQL，语法解析 AST，执行计划和数据聚合是由 PromQL 完成，fanout 模块会向本地和远端同时下发查询数据，PTSDB 负责本地数据的检索。PTSDB 实现了定义的 Adpator，包括 Select, LabelNames, LabelValues 和 Querier.
-
-PromQL 定义了三类查询：
+PromQL 即是 Prometheus Query Language，虽然它以 QL 结尾，却并非 SQL 那样的语言。标签是 PromQL 的关键部分，您不仅可以使用它们进行任意聚合，还可以将不同的指标结合在一起，以针对它们进行算术运算。从预测到日期以及数学功能，您可以使用多种功能。PromQL 定义了三类查询：
 
 - 瞬时数据 (Instant vector): 包含一组时序，每个时序只有一个点，例如：http_requests_total
 
@@ -10,7 +8,33 @@ PromQL 定义了三类查询：
 
 - 纯量数据 (Scalar): 纯量只有一个数字，没有时序，例如：count(http_requests_total)
 
-一些典型的查询包括：
+## 语法速览
+
+最简单的 PromQL 就是直接输入指标名称，比如 up 这个指标名称就能够得到所有的实例的运行幸亏：
+
+```sh
+up{instance="192.168.0.107:9090",job="prometheus"}    1
+up{instance="192.168.0.108:9090",job="prometheus"}    1
+up{instance="192.168.0.107:9100",job="server"}    1
+up{instance="192.168.0.108:9104",job="mysql"}    0
+
+# 指定某个 label
+up{job="prometheus"}
+```
+
+这种写法被称为 Instant vector selectors，这里不仅可以使用 = 号，还可以使用 !=、=~、!~，比如下面这样：
+
+```sh
+up{job!="prometheus"}
+
+# =~ 是根据正则表达式来匹配，必须符合 RE2 的语法。
+up{job=~"server|mysql"}
+up{job=~"192\.168\.0\.107.+"}
+```
+
+## 典型查询
+
+这里我们列举了一些常见的 PromQL 查询，及其与 SQL 的对比：
 
 ```sh
 # 查询当前所有数据

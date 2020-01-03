@@ -45,3 +45,4 @@ OpenTSDB 的数据模型与 Prometheus 几乎相同，查询语言上 PromQL 更
 - https://mp.weixin.qq.com/s/0vZLCZBPFfOMNqubpQUrbg
 - https://mp.weixin.qq.com/s/0vZLCZBPFfOMNqubpQUrbg
 - https://mp.weixin.qq.com/s/ijx8zIUmpmBB6akh8Ru0zw Prometheus 基础知识介绍
+- https://learning.oreilly.com/library/view/prometheus-up/9781492034131/preface01.html#idm46043484494872
