@@ -107,3 +107,20 @@ groups:
 ```
 
 ## 组合 Range Vector 函数
+
+如前所述，不能在产生即时矢量的函数的输出上使用范围矢量函数，譬如 `max_over_time(sum without(instance)(rate(x_total[5m]))[1h])` 这样的操作就是不可行的。我们可以利用 Recording Rules 实现这样的功能：
+
+```yml
+groups:
+  - name: j_job_rules
+    rules:
+      - record: job:x:rate5m
+        expr: >
+          sum without(instance)(
+            rate(x_total{job="j"}[5m])
+          )
+      - record: job:x:max_over_time1h_rate5m
+        expr: max_over_time(job:x:rate5m{job="j"}[1h])
+```
+
+此方法可与任何范围向量函数一起使用，不仅包括 `_over_time` 函数，而且包括 `predict_linear`，deriv 和 holt_winters。但是，此技术不应与 rate, irate, 或者 increase 一起使用，因为有效的速率表达 `(sum（x_total）[5m])` 每次其组成计数器之一重置或消失时都会产生大量尖峰。

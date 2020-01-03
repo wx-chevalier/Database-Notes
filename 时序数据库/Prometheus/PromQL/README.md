@@ -8,7 +8,7 @@ PromQL 即是 Prometheus Query Language，虽然它以 QL 结尾，却并非 SQL
 
 - 纯量数据 (Scalar): 纯量只有一个数字，没有时序，例如：count(http_requests_total)
 
-## 语法速览
+# 语法速览
 
 最简单的 PromQL 就是直接输入指标名称，比如 up 这个指标名称就能够得到所有的实例的运行幸亏：
 
@@ -72,4 +72,80 @@ select * from http_requests_total where timestamp between xxxx and xxxx order by
 # irate查询：速率查询
 irate(http_requests_total[5m])
 select code, handler, instance, job, method, sum(value)/300 AS value from http_requests_total where timestamp between xxxx and xxxx group by code, handler, instance, job, method;
+```
+
+# Gauge
+
+Gauge 是对于状态的快照，通常被用于那些需要求和、求平均以及最小值、最大值的场景。譬如 Node Exporter 导出了 node_filesystem_size_bytes 这个度量，其反映了挂载的文件系统的体积，并且包含了 device, fstype, 以及 mountpoint 标签。我们能够通过如下的方式计算总的文件大小：
+
+```sh
+sum without(device, fstype, mountpoint)(node_filesystem_size_bytes)
+```
+
+这里的 without 函数会高速 sum 聚合器将有相同 label 的度量值相加，但是忽略 device, fstype, 以及 mountpoint 标签。我们可能会得到如下的结果：
+
+```sh
+node_filesystem_free_bytes{device="/dev/sda1",fstype="vfat",
+    instance="localhost:9100",job="node",mountpoint="/boot/efi"} 70300672
+node_filesystem_free_bytes{device="/dev/sda5",fstype="ext4",
+    instance="localhost:9100",job="node",mountpoint="/"} 30791843840
+node_filesystem_free_bytes{device="tmpfs",fstype="tmpfs",
+    instance="localhost:9100",job="node",mountpoint="/run"} 817094656
+node_filesystem_free_bytes{device="tmpfs",fstype="tmpfs",
+    instance="localhost:9100",job="node",mountpoint="/run/lock"} 5238784
+node_filesystem_free_bytes{device="tmpfs",fstype="tmpfs",
+    instance="localhost:9100",job="node",mountpoint="/run/user/1000"} 826912768
+
+# 聚合的结果如下
+{instance="localhost:9100",job="node"} 32511390720
+```
+
+同样地，我们也可以忽略 instance 标签，即获得总的文件系统的大小：
+
+```sh
+sum without(device, fstype, mountpoint, instance)(node_filesystem_size_bytes)
+{job="node"} 32511390720
+```
+
+您可以对其他聚合使用相同的方法。 max 会告诉您每台计算机上最大的已挂载文件系统的大小：
+
+```sh
+max without(device, fstype, mountpoint)(node_filesystem_size_bytes)
+
+{instance="localhost:9100",job="node"} 30792601600
+
+avg without(instance, job)(process_open_fds)
+```
+
+# Counter
+
+Counters 跟踪事件的数量或大小，并且您的应用程序在其 metrics 上公开的值是自启动以来的总和。但是，这对于您自己而言并没有多大用处，您真正想知道的是计数器随着时间增长的速度。尽管 increase 和 irate 函数也可以对计数器值进行操作，但这通常使用 rate 函数来完成。
+
+譬如，如果我们要去计算每秒吞吐的网络流量：
+
+```sh
+rate(node_network_receive_bytes_total[5m])
+```
+
+`[5m]` 意为使用过去五分钟的数据进行计算，即会得到过去五分钟的平均值：
+
+```sh
+{device="lo",instance="localhost:9100",job="node"}  1859.389655172414
+{device="wlan0",instance="localhost:9100",job="node"} 1314.5034482758622
+```
+
+rate 函数的输出值即为 Gauge，我们也就可以应用 Gauge 的聚合函数。如上的用法，我们也可以忽略网卡详情而获得总的容量：
+
+```sh
+sum without(device)(rate(node_network_receive_bytes_total[5m]))
+
+# {instance="localhost:9100",job="node"} 3173.8931034482762
+```
+
+或者我们也可以指定获取某个网卡的数据：
+
+```sh
+sum without(instance)(rate(node_network_receive_bytes_total{device="eth0"}[5m]))
+
+# {device="eth0",job="node"} 3173.8931034482762
 ```
