@@ -1,3 +1,5 @@
+> 导读：参考《[Kubernetes 实战](https://github.com/wx-chevalier/Cloud-Series)》了解 K8s 中 Prometheus 的应用。
+
 # 基于 Prometheus 的线上应用监控
 
 Prometheus 是一套开源的监控、报警、时间序列数据库的组合，它的灵感来自谷歌的 Borgmon。Prometheus 最初由前谷歌 SRE Matt T. Proud 开发，并转为一个研究项目；在 Proud 加入 SoundCloud 之后，他与另一位工程师 Julius Volz 合作开发了 Prometheus。随着发展，越来越多公司和组织接受采用 Prometheus，社区也十分活跃，他们便将它独立成开源项目，并且有公司来运作。Google SRE 的书内也曾提到跟他们 BorgMon 监控系统相似的实现是 Prometheus。
