@@ -1,6 +1,26 @@
 # 在 HTTP API 中使用 PromQL
 
-Prometheus 当前稳定的 HTTP API 可以通过/api/v1 访问。
+我们不仅仅可以在 Prometheus 的 Graph 页面查询 PromQL，Prometheus 还提供了一种 HTTP API 的方式，可以更灵活的将 PromQL 整合到其他系统中使用，譬如下面要介绍的 Grafana，就是通过 Prometheus 的 HTTP API 来查询指标数据的。实际上，我们在 Prometheus 的 Graph 页面查询也是使用了 HTTP API。
+
+我们看下 [Prometheus 的 HTTP API 官方文档](https://prometheus.io/docs/prometheus/latest/querying/api/)，它提供了下面这些接口：
+
+- GET /api/v1/query
+- GET /api/v1/query_range
+- GET /api/v1/series
+- GET /api/v1/label/<label_name>/values
+- GET /api/v1/targets
+- GET /api/v1/rules
+- GET /api/v1/alerts
+- GET /api/v1/targets/metadata
+- GET /api/v1/alertmanagers
+- GET /api/v1/status/config
+- GET /api/v1/status/flags
+
+从 Prometheus v2.1 开始，又新增了几个用于管理 TSDB 的接口：
+
+- POST /api/v1/admin/tsdb/snapshot
+- POST /api/v1/admin/tsdb/delete_series
+- POST /api/v1/admin/tsdb/clean_tombstones
 
 ## API 响应格式
 
