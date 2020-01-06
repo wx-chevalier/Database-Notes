@@ -24,7 +24,7 @@
 
 ## API 响应格式
 
-Prometheus API 使用了 JSON 格式的响应内容。 当 API 调用成功后将会返回 2xx 的 HTTP 状态码。
+Prometheus API 使用了 JSON 格式的响应内容。当 API 调用成功后将会返回 2xx 的 HTTP 状态码。
 
 反之，当 API 调用失败时可能返回以下几种不同的 HTTP 状态码：
 
