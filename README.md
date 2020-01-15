@@ -4,8 +4,6 @@
 
 ![mindmap](https://i.postimg.cc/k4XKQvh4/Database.png)
 
-
-
 # 数据库的特性
 
 对于数据库的期许往往会包含以下几方面，首先是**易用与灵活**，尽可能可以用贴近业务语言的方式存取数据，而不需要理解太多抽象的语义或者函数；然后是**高性能**，无论存取皆可以迅速完成；然后是**高可用与可扩展**，我们能够根据实际的业务需要快速扩展数据库，提供长期的可用性与数据的安全一致，而不会因为数据的爆炸性增长导致数据库的崩溃。
@@ -20,15 +18,13 @@
 
 # About
 
-![default](https://i.postimg.cc/y1QXgJ6f/image.png)
+
 
 ## Copyright | 版权
 
 ![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg) ![](https://parg.co/bDm)
 
 笔者所有文章遵循 [知识共享 署名-非商业性使用-禁止演绎 4.0 国际许可协议](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh)，欢迎转载，尊重版权。如果觉得本系列对你有所帮助，欢迎给我家布丁买点狗粮(支付宝扫码)~
-
-![](https://i.postimg.cc/y1QXgJ6f/image.png?raw=true)
 
 ## Home & More | 延伸阅读
 
