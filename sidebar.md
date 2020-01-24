@@ -3,7 +3,7 @@
     - [F1](/NewSQL/F1.md)
     - [TiDB](/NewSQL/TiDB/README.md)
       
-  - 关系型数据库
+  - [关系型数据库](/关系型数据库/README.md)
     - [MySQL](/关系型数据库/MySQL/README.md)
       - [数据类型](/关系型数据库/MySQL/数据类型/README.md)
         - [字符串](/关系型数据库/MySQL/数据类型/字符串.md)
@@ -45,7 +45,8 @@
         - [视图](/关系型数据库/SQL/数据查询/视图.md)
     - [SQLServer](/关系型数据库/SQLServer/README.md)
       
-    - [数据库简史](/关系型数据库/数据库简史.md)
+    - 导论
+      - [数据库简史](/关系型数据库/导论/数据库简史.md)
     - [架构机制](/关系型数据库/架构机制/README.md)
       - [事务管理](/关系型数据库/架构机制/事务管理/README.md)
         - [MVCC](/关系型数据库/架构机制/事务管理/MVCC.md)
