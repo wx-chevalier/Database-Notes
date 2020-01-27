@@ -18,7 +18,7 @@ MySQL Binlog 日志有三种格式，分别为 Statement、ROW、MiXED。
 
 每一条会修改数据的 SQL 都会记录在 Binlog 中，不需要记录每一行的变化，减少了 Binlog 日志量，节约了 IO，提高性能。正常同一条记录修改或者插入 ROW 格式所产生的日志量还小于 Statement 产生的日志量，但是考虑到如果带条件的 update 操作，以及整表删除，alter 表等操作，ROW 格式会产生大量日志，因此在考虑是否使用 ROW 格式日志时应该跟据应用的实际情况，其所产生的日志量会增加多少，以及带来的 IO 性能问题。
 
-由于记录的只是执行语句，为了这些语句能在 Slave 上正确运行，因此还必须记录每条语句在执行的时候的一些相关信息，以保证所有语句能在 Slave 得到和在 master 端执行时候相同 的结果。另外 MySQL 的复制,像一些特定函数功能，slave 可与 master 上要保持一致会有很多相关问题(如 sleep()函数， last_insert_id()，以及 user-defined functions(udf)会出现问题)。同时在 INSERT ...SELECT 会产生比 RBR 更多的行级锁。
+由于记录的只是执行语句，为了这些语句能在 Slave 上正确运行，因此还必须记录每条语句在执行的时候的一些相关信息，以保证所有语句能在 Slave 得到和在 master 端执行时候相同 的结果。另外 MySQL 的复制,像一些特定函数功能，slave 可与 master 上要保持一致会有很多相关问题(如 sleep()函数，last_insert_id()，以及 user-defined functions(udf)会出现问题)。同时在 INSERT ...SELECT 会产生比 RBR 更多的行级锁。
 
 ## Row
 
