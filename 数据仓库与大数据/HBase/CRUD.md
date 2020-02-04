@@ -66,7 +66,7 @@ long icrementColumnValue(byte[] row, byte[] famuly, byte[] qualifier, long amoun
 
     协处理器的加载有两种方式，一种是通过配置文件，在配置文件中指定加载路径、类名等，通过这种方式加载的处理器都是SYSTEM级别的，会作用于所有的请求，所有的表；另一种方式是通过在创建表的时候在表中指定，这种方式既可以创建全局的SYSTEM级别的处理器，也可以创建USER级别的处理器，USER级别的处理器是针对表的。
 
-Path path = new Paht("test.jar"); HTableDescriptor htd = new HTableDescriptor("test"); htd.addFamily(new HColumnDescriptor("family1")); htd.setValue("Coprocessor$1", path.toString + "|" + className + "|" + Coprocessor.Priority.USER); HBaseAdmin admin = new HBaseAdmin(conf); admin.createTable(htd);
+Path path = new Paht("test.jar"); HTableDescriptor htd = new HTableDescriptor("test"); htd.addFamily(new HColumnDescriptor("family1")); htd.setValue("Coprocessor\$1", path.toString + "|" + className + "|" + Coprocessor.Priority.USER); HBaseAdmin admin = new HBaseAdmin(conf); admin.createTable(htd);
 
     这里setValue方法有两个参数，第一个参数是协处理器的名字，$后面跟的是影响执行顺序的序号；第二个参数是<path>|<classname>|<priority>。
     Observer

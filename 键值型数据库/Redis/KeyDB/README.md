@@ -17,4 +17,3 @@ For the chart comparing KeyDB ops/sec vs #threads enabled: Memtier: memtier_benc
 KeyDB pinned: keydb-server --port 6379 --requirepass <'yourpassword> --server-threads <#threads used for test> --server-thread-affinity true
 
 KeyDB unpinned: keydb-server --port 6379 --requirepass <'yourpassword> --server-threads <#threads used for test>
-

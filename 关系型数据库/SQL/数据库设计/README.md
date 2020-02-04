@@ -180,14 +180,16 @@ select t1.* from t1 left semi join (select a, count(*) from t2 group by a having
 
 ```java
 package org.alidata.odps.udf.examples;
-  import com.aliyun.odps.udf.UDF;
+
+import com.aliyun.odps.udf.UDF;
 
 public final class Lower extends UDF {
+
   public String evaluate(String s) {
     if (s == null) {
-        return null;
+      return null;
     }
-        return s.toLowerCase();
+    return s.toLowerCase();
   }
 }
 ```

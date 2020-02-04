@@ -1,5 +1,3 @@
-
-
 # Redis Sharding | Redis 分片
 
 # Partitioning(分片)

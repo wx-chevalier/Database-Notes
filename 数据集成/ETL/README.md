@@ -11,4 +11,3 @@
 在实时 ETL 中，数据源和数据目的地之间仿佛由管道连接在一起。数据从源端产生后，以极低的延迟被采集、加工，并写入目的地，整个过程没有明显的处理批次边界，因此实时 ETL 又被称为 Data Pipeline 模式。
 
 ![](https://tva1.sinaimg.cn/large/007rAy9hgy1g3spmmv2sij30u00gtq3l.jpg)
-
