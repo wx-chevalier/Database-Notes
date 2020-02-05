@@ -7,3 +7,18 @@
 目前主流的存储引擎主要分为两大类：日志结构（log-structured） 的存储引擎，以及面向页面（page-oriented） 的存储引擎（例如 B 树）。
 
 # 简单的 Bash 数据库
+
+世界上最简单的数据库可以用两个 Bash 函数实现：
+
+```java
+#!/bin/bash
+db_set () {
+	echo "$1,$2" >> database
+}
+
+db_get () {
+	grep "^$1," database | sed -e "s/^$1,//" | tail -n 1
+}
+```
+
+这两个函数实现了键值存储的功能。执行 db_set key value ，会将 键（key）和值（value） 存储在数据库中。键和值（几乎）可以是你喜欢的任何东西，例如，值可以是 JSON 文档。然后调用 db_get key ，查找与该键关联的最新值并将其返回。

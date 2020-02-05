@@ -53,7 +53,7 @@ select * from http_requests_total where code="200" and handler="query" and times
 http_requests_total{code~="20"}
 select * from http_requests_total where code like "%20%" and timestamp between xxxx and xxxx
 
-# 值过滤： value大于100
+# 值过滤：value大于100
 http_requests_total > 100
 select * from http_requests_total where value > 100 and timestamp between xxxx and xxxx
 

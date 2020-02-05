@@ -28,7 +28,7 @@ TimescaleDB 是 Timescale Inc.(成立于 2015 年)开发的一款号称兼容全
 
 ![多值模型](https://s2.ax1x.com/2019/11/24/MLvPts.png)
 
-基本上可以认为： Narrow Table 对应的就是单值模型，而 Wide Table 对应的就是多值模型。由于采用的是传统数据库的关系表的模型，所以 TimescaleDB 的 metric 值必然是强类型的，它的类型可以是 PostgreSQL 中的 数值类型，字符串类型 等。
+基本上可以认为：Narrow Table 对应的就是单值模型，而 Wide Table 对应的就是多值模型。由于采用的是传统数据库的关系表的模型，所以 TimescaleDB 的 metric 值必然是强类型的，它的类型可以是 PostgreSQL 中的 数值类型，字符串类型 等。
 
 ## 特性
 
