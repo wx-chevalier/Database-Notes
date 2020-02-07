@@ -14,7 +14,7 @@
 | FLOAT(p)                      | 如果 0 <= p <= 24 为 4 个字节, 如果 25 <= p <= 53 为 8 个字节 |
 | FLOAT                         | 4 个字节                                                      |
 | DOUBLE [PRECISION], item REAL | 4 个字节                                                      |
-| DECIMAL(M,D), NUMERIC(M,D)    | 变长（0-4 个字节）                                            |
+| DECIMAL(M,D), NUMERIC(M,D)    | 变长（0-4 个字节）                                           |
 | BIT(M)                        | 大约(M+7)/8 个字节                                            |
 
 注意，这里 `int(10)` 这里的 10 指的是数值的宽度，并不是字节。

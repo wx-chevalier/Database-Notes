@@ -4,7 +4,7 @@
 
 Prometheus 是一套开源的监控、报警、时间序列数据库的组合，它的灵感来自谷歌的 Borgmon。Prometheus 最初由前谷歌 SRE Matt T. Proud 开发，并转为一个研究项目；在 Proud 加入 SoundCloud 之后，他与另一位工程师 Julius Volz 合作开发了 Prometheus。随着发展，越来越多公司和组织接受采用 Prometheus，社区也十分活跃，他们便将它独立成开源项目，并且有公司来运作。Google SRE 的书内也曾提到跟他们 BorgMon 监控系统相似的实现是 Prometheus。
 
-Prometheus 的优势在于其易于安装使用，外部依赖较少；并且直接按照分布式、微服务架构模式进行设计，支持服务自动化发现与代码集成。Prometheus 能够自定义多维度的数据模型，内置强大的查询语句，搭配其丰富的社区扩展，能够轻松实现数据可视化。而随着容器、云计算、云原生的发展，目前 Prometheus 已经广泛用于 Kubernetes 集群的监控系统中。2015 年 7 月，隶属于 Linux 基金会的 云原生计算基金会（CNCF，Cloud Native Computing Foundation） 应运而生。第一个加入 CNCF 的项目是 Google 的 Kubernetes，而 Prometheus 是第二个加入的（2016 年）。
+Prometheus 的优势在于其易于安装使用，外部依赖较少；并且直接按照分布式、微服务架构模式进行设计，支持服务自动化发现与代码集成。Prometheus 能够自定义多维度的数据模型，内置强大的查询语句，搭配其丰富的社区扩展，能够轻松实现数据可视化。而随着容器、云计算、云原生的发展，目前 Prometheus 已经广泛用于 Kubernetes 集群的监控系统中。2015 年 7 月，隶属于 Linux 基金会的 云原生计算基金会（CNCF，Cloud Native Computing Foundation）应运而生。第一个加入 CNCF 的项目是 Google 的 Kubernetes，而 Prometheus 是第二个加入的（2016 年）。
 
 ![Prometheus 生态系统](https://i.postimg.cc/g0SDCRhK/image.png)
 
