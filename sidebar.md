@@ -1,6 +1,8 @@
   - [NewSQL](/NewSQL/README.md)
-    - [Aurora](/NewSQL/Aurora.md)
-    - [F1](/NewSQL/F1.md)
+    - [Aurora](/NewSQL/Aurora/README.md)
+      
+    - [F1](/NewSQL/F1/README.md)
+      
     - [TiDB](/NewSQL/TiDB/README.md)
       
   - [关系型数据库](/关系型数据库/README.md)
