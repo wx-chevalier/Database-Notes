@@ -4,7 +4,8 @@
     - [F1](/NewSQL/F1/README.md)
       
     - [TiDB](/NewSQL/TiDB/README.md)
-      
+      - TIKV
+        - [副本与分片](/NewSQL/TiDB/TIKV/副本与分片.md)
   - [关系型数据库](/关系型数据库/README.md)
     - [MySQL](/关系型数据库/MySQL/README.md)
       - [数据类型](/关系型数据库/MySQL/数据类型/README.md)
