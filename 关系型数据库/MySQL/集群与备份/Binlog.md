@@ -8,7 +8,7 @@ MySQL 的恢复是 SQL 语句级的，也就是重新执行 BINLOG 中的 SQL �
 
 ## Binlog 与 Redo Log
 
-Binlog 和 Redo Log 的区别是，他是在存储引擎上层 Server 层写入的，他记录的是逻辑操作，也就是对应的 sql ,而 Redo Log 记录的底层某个数据页的物理操作，redolog 是循环写的，而 Binlog 是追加写的，不会覆盖以前写的数据。而 Binlog 也需要在事务提交前写入文件。binlog 的写入页需要通过 fsync 来保证落盘，为了提高 tps ，MySQL 　可以通过参数　　 sync_binlog 来控制是否需要同步刷盘，该策略会影响当主库宕机后备库数据可能并没有完全同步到主库数据。由于事务的原子性，需要保证事务提交的时候 Redo Log 和 Binlog 都写入成功，所以 MySQL 执行层采用了两阶段提交来保证 Redo Log 和 Binlog 都写入成功后才 commit，如果一方失败则会进行回滚。
+Binlog 和 Redo Log 的区别是，他是在存储引擎上层 Server 层写入的，他记录的是逻辑操作，也就是对应的 sql ,而 Redo Log 记录的底层某个数据页的物理操作，redolog 是循环写的，而 Binlog 是追加写的，不会覆盖以前写的数据。而 Binlog 也需要在事务提交前写入文件。binlog 的写入页需要通过 fsync 来保证落盘，为了提高 tps，MySQL 　可以通过参数　　 sync_binlog 来控制是否需要同步刷盘，该策略会影响当主库宕机后备库数据可能并没有完全同步到主库数据。由于事务的原子性，需要保证事务提交的时候 Redo Log 和 Binlog 都写入成功，所以 MySQL 执行层采用了两阶段提交来保证 Redo Log 和 Binlog 都写入成功后才 commit，如果一方失败则会进行回滚。
 
 # 日志格式
 
