@@ -1,6 +1,6 @@
 # Filter
 
-基础 API 中的查询操作在面对大量数据的时候是非常苍白的，这里 Hbase 提供了高级的查询方法：Filter 。Filter 可以根据簇、列、版本等更多的条件来对数据进行过滤，基于 Hbase 本身提供的三维有序(主键有序、列有序、版本有序)，这些 Filter 可以高效的完成查询过滤的任务。带有 Filter 条件的 RPC 查询请求会把 Filter 分发到各个 RegionServer，是一个服务器端(Server-side )的过滤器，这样也可以降低网络传输的压力。要完成一个过滤的操作，至少需要两个参数。一个是抽象的操作符，Hbase 提供了枚举类型的变量来表示这些抽象的操作符：LESS/LESS_OR_EQUAL/EQUAL/NOT_EUQAL 等；另外一个就是具体的比较器(Comparator )，代表具体的比较逻辑，如果可以提高字节级的比较、字符串级的比较等。有了这两个参数，我们就可以清晰的定义筛选的条件，过滤数据。CompareFilter ( CompareOp compareOp，WritableByteArrayComparable valueComparator )
+基础 API 中的查询操作在面对大量数据的时候是非常苍白的，这里 Hbase 提供了高级的查询方法：Filter。Filter 可以根据簇、列、版本等更多的条件来对数据进行过滤，基于 Hbase 本身提供的三维有序(主键有序、列有序、版本有序)，这些 Filter 可以高效的完成查询过滤的任务。带有 Filter 条件的 RPC 查询请求会把 Filter 分发到各个 RegionServer，是一个服务器端(Server-side )的过滤器，这样也可以降低网络传输的压力。要完成一个过滤的操作，至少需要两个参数。一个是抽象的操作符，Hbase 提供了枚举类型的变量来表示这些抽象的操作符：LESS/LESS_OR_EQUAL/EQUAL/NOT_EUQAL 等；另外一个就是具体的比较器(Comparator )，代表具体的比较逻辑，如果可以提高字节级的比较、字符串级的比较等。有了这两个参数，我们就可以清晰的定义筛选的条件，过滤数据。CompareFilter ( CompareOp compareOp，WritableByteArrayComparable valueComparator )
 
      CompareFilter是高层的抽象类，下面我们将看到它的实现类和实现类代表的各种过滤条件。这里实现类实际上代表的是参数中的过滤器过滤的内容，可以使主键、簇名、列值等，这就是由CompareFilter决定了。
     行过滤器(RowFilter)
@@ -87,7 +87,7 @@ RegionCoprocessorEnvironment getEnvironment()
 
     startKey和endKey用于确定哪些RegionServer将执行Endpoint，Batch中的内部类将决定协议中方法的调用。
 
-四、 HTablePool 连接池 在 Hbase 中，创建一个代表表的 HTable 实例是一个耗时且很占资源的操作，类似操作数据库，我们也需要建立我们自己的连接池，于是有了代表连接池的抽象类：HTable 。
+四、 HTablePool 连接池 在 Hbase 中，创建一个代表表的 HTable 实例是一个耗时且很占资源的操作，类似操作数据库，我们也需要建立我们自己的连接池，于是有了代表连接池的抽象类：HTable。
 
 HTablePool(Configuaration conf, int maxSize) HTablePool(Configuaration conf, int maxSize, HTableInterfaceFactory factory)
 

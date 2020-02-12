@@ -1,6 +1,6 @@
 # TimescaleDB
 
-TimescaleDB 是 Timescale Inc.(成立于 2015 年)开发的一款号称兼容全 SQL 的时序数据库 。它的本质是一个基于 PostgreSQL（以下简称 PG）的扩展（Extension），主打的卖点如下：
+TimescaleDB 是 Timescale Inc.(成立于 2015 年)开发的一款号称兼容全 SQL 的时序数据库。它的本质是一个基于 PostgreSQL（以下简称 PG）的扩展（Extension），主打的卖点如下：
 
 - 全 SQL 支持
 
@@ -20,7 +20,7 @@ TimescaleDB 是 Timescale Inc.(成立于 2015 年)开发的一款号称兼容全
 
 但是在 TimescaleDB 中，数据模型必须以一个二维表的形式呈现，这就需要用户结合自己使用时序数据的业务场景，自行设计定义二维表。在 TimescaleDB 的官方文档中，对于如何设计时序数据的数据表，给出了两个范式：Narrow Table、Wide Table。
 
-所谓的 Narrow Table 就是将 metric 分开记录，一行记录只包含一个 metricValue - timestamp 。举例如下：
+所谓的 Narrow Table 就是将 metric 分开记录，一行记录只包含一个 metricValue - timestamp。举例如下：
 
 ![单值模型](https://s2.ax1x.com/2019/11/24/MLjsw4.png)
 
@@ -56,6 +56,6 @@ TimescaleDB 在 PostgreSQL 的基础之上做了一系列扩展，主要涵盖�
 
 - 当前的产品架构来看仍然是一个单机库，不能发挥分布式技术的优势。而且数据虽然自动分区，但是由于时间戳决定分区，因此很容易形成 I/O 热点。
 
-- 在功能层面，面向时序数据库场景的特性还比较有限。目前更像是一个 传统 OLTP 数据库 + 部分时序特性 。
+- 在功能层面，面向时序数据库场景的特性还比较有限。目前更像是一个 传统 OLTP 数据库 + 部分时序特性。
 
 不管怎样，TimescaleDB 也算是面向时序数据库从另一个角度发起的尝试。在当前时序数据库仍然处于新兴事物的阶段，它未来的发展方向也是值得我们关注并借鉴的。

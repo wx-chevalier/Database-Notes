@@ -46,7 +46,7 @@ JMX Exporter 用于收集 JMX 指标，很多使用 Java 的系统，都可以�
 $ java -javaagent:jmx_prometheus_javaagent-0.3.1.jar=9404:config.yml -jar spring-boot-sample-1.0-SNAPSHOT.jar
 ```
 
-其中，9404 是 JMX Exporter 暴露指标的端口，`config.yml` 是 JMX Exporter 的配置文件，它的内容可以 [参考 JMX Exporter 的配置说明](https://github.com/prometheus/jmx_exporter#configuration) 。然后检查下指标数据是否正确获取：
+其中，9404 是 JMX Exporter 暴露指标的端口，`config.yml` 是 JMX Exporter 的配置文件，它的内容可以 [参考 JMX Exporter 的配置说明](https://github.com/prometheus/jmx_exporter#configuration)。然后检查下指标数据是否正确获取：
 
 ```s
 $ curl http://localhost:9404/metrics
