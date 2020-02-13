@@ -42,7 +42,7 @@ TimescaleDB 在 PostgreSQL 的基础之上做了一系列扩展，主要涵盖�
 
 - 面向时序数据表的定制化并行查询
 
-其中 3 和 4 都是在 PostgreSQL 的现有机制上进行的面向时序数据场景的微创新。1 和 2 则是 TimescaleDB 的核心功能。综上所述，由于 TimescaleDB 完全基于 PostgreSQL 构建而成，因此它具有若干与生俱来的优势 ：
+其中 3 和 4 都是在 PostgreSQL 的现有机制上进行的面向时序数据场景的微创新。1 和 2 则是 TimescaleDB 的核心功能。综上所述，由于 TimescaleDB 完全基于 PostgreSQL 构建而成，因此它具有若干与生俱来的优势：
 
 - 100%继承 PostgreSQL 的生态。且由于完整支持 SQL，对于未接触过时序数据的初学者反而更有吸引力
 
