@@ -12,4 +12,4 @@
 
 - 面向页面的就地更新学派：将磁盘视为一组可以覆写的固定大小的页面 B 树是这种哲学的典范，用在所有主要的关系数据库中和许多非关系型数据库。
 
-诸如 BerkeleyDB，LevelDB 及其后代 RocksDB，LMDB 及其后代 libmdbx，Sophia，HaloDB 等存储引擎的开发均独立于它们现在所嵌入的数据库管理系统使用可插拔存储引擎使数据库开发人员能够使用现有存储引擎来引导数据库系统，并专注于其他子系统。同时，数据库系统组件之间的明确隔离为在不同引擎之间切换提供了机会，这可能更适合于特定的用例例如，流行的数据库管理系统 MySQL 具有多个存储引擎，包括 InnoDB，MyISAM 和 RocksDB（在 MyRocks 发行版中） MongoDB 允许在 WiredTiger，内存中和（现已弃用的）MMAPv1 存储引擎之间切换。
+诸如 BerkeleyDB，LevelDB 及其后代 RocksDB，LMDB 及其后代 libmdbx，Sophia，HaloDB 等存储引擎的开发均独立于它们现在所嵌入的数据库管理系统使用可插拔存储引擎使数据库开发人员能够使用现有存储引擎来引导数据库系统，并专注于其他子系统。同时，数据库系统组件之间的明确隔离为在不同引擎之间切换提供了机会，这可能更适合于特定的用例例如，流行的数据库管理系统 MySQL 具有多个存储引擎，包括 InnoDB，MyISAM 和 RocksDB（在 MyRocks 发行版中）MongoDB 允许在 WiredTiger，内存中和（现已弃用的）MMAPv1 存储引擎之间切换。
