@@ -71,13 +71,13 @@ SELECT [stuff you want to select] FROM [the table that it is in] ORDER BY [colum
 SELECT * FROM tracks ORDER BY album_id;
 ```
 
-您可以将多个事物列出到 ORDER BY 中，这在重复行很多的情况下很有用。 例如，在曲目中，我们可以通过作曲家对所有数据进行排序，然后通过列出这两个排序列来排序歌曲的长度（毫秒）。
+您可以将多个事物列出到 ORDER BY 中，这在重复行很多的情况下很有用。例如，在曲目中，我们可以通过作曲家对所有数据进行排序，然后通过列出这两个排序列来排序歌曲的长度（毫秒）。
 
 ```sql
 SELECT * FROM tracks ORDER BY composer, milliseconds;
 ```
 
-默认情况下，事物按升序排序。 您可以通过指定 DESC（降序）来选择颠倒顺序。 同样，如果您想指定要 ASCending，请使用 ASC。
+默认情况下，事物按升序排序。您可以通过指定 DESC（降序）来选择颠倒顺序。同样，如果您想指定要 ASCending，请使用 ASC。
 
 ```sql
 SELECT * FROM tracks ORDER BY name DESC;
