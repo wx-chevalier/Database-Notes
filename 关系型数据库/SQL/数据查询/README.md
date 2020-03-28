@@ -1,5 +1,7 @@
 # 数据查询
 
+完整的 SQL 查询语句语法如下：
+
 ```sql
 SELECT
     [ALL | DISTINCT | DISTINCTROW ]
@@ -27,19 +29,3 @@ SELECT
     [FOR {UPDATE | SHARE} [OF tbl_name [, tbl_name] ...] [NOWAIT | SKIP LOCKED]
       | LOCK IN SHARE MODE]]
 ```
-
-```sql
-CASE expression
-    WHEN condition1 THEN result1
-    WHEN condition2 THEN result2
-   ...
-    WHEN conditionN THEN resultN
-    ELSE result
-END as field_name
-```
-
-# 统计查询
-
-不要使用 count(列名)或 count(常量)来替代 count()，count()是 SQL92 定义的标准统计行数的语法，跟数据库无关，跟 NULL 和非 NULL 无关。`count(*)` 会统计值为 NULL 的行，而 count(列名)不会统计此列为 NULL 值的行。
-
-count(distinct col) 计算该列除 NULL 之外的不重复行数，注意 count(distinct col1, col2) 如果其中一列全为 NULL，那么即使另一列有不同的值，也返回为 0。
