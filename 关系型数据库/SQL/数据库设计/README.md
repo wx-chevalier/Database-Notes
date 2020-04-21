@@ -1,5 +1,9 @@
 # 数据库设计
 
+- Preserve everything we know when we split our information into tables.
+
+- Reduce the redundancy of how we store it. Regarding the second point: do we only want to reduce redundancy because of a storage size problem? No, we do it mainly because having redundant data leads you to inconsistency problems if you don’t update all the fields that represent the same information when an update occurs
+
 # Data Definition Language | 数据定义
 
 DDL 包含 CREATE, ALTER, DROP 等常见的数据定义语句，这里可以查阅[完整的表结构 SQL](https://gist.github.com/wx-chevalier/ebd1ceb919a68e428e7901f7fc766f02)。
