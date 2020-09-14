@@ -2,7 +2,7 @@
 
 [![image.png](https://i.postimg.cc/j24P0gbr/image.png)](https://postimg.cc/wR37DkMW)
 
-# 深入浅出分布式基础架构-数据库篇
+# Database Series（数据库·实践笔记）
 
 ![mindmap](https://i.postimg.cc/k4XKQvh4/Database.png)
 
