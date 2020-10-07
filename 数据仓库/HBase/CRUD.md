@@ -87,7 +87,7 @@ RegionCoprocessorEnvironment getEnvironment()
 
     startKey和endKey用于确定哪些RegionServer将执行Endpoint，Batch中的内部类将决定协议中方法的调用。
 
-四、 HTablePool 连接池 在 Hbase 中，创建一个代表表的 HTable 实例是一个耗时且很占资源的操作，类似操作数据库，我们也需要建立我们自己的连接池，于是有了代表连接池的抽象类：HTable。
+四、HTablePool 连接池 在 Hbase 中，创建一个代表表的 HTable 实例是一个耗时且很占资源的操作，类似操作数据库，我们也需要建立我们自己的连接池，于是有了代表连接池的抽象类：HTable。
 
 HTablePool(Configuaration conf, int maxSize) HTablePool(Configuaration conf, int maxSize, HTableInterfaceFactory factory)
 

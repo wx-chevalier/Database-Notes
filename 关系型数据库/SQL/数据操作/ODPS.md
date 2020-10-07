@@ -31,7 +31,7 @@ create table sale_detail_ctas1 as
 select * from sale_detail;
 ```
 
-Partitioned by 指定表的分区字段，目前支持 Tinyint、Smallint、 Int、 Bigint、Varchar 和 String 类型。分区值不允许有双字节字符（如中文），必须是以英文字母 a-z，A-Z 开始后可跟字母数字，名称的长度不超过 128 字节。当利用分区字段对表进行分区时，新增分区、更新分区内数据和读取分区数据均不需要做全表扫描，可以提高处理效率。
+Partitioned by 指定表的分区字段，目前支持 Tinyint、Smallint、Int、Bigint、Varchar 和 String 类型。分区值不允许有双字节字符（如中文），必须是以英文字母 a-z，A-Z 开始后可跟字母数字，名称的长度不超过 128 字节。当利用分区字段对表进行分区时，新增分区、更新分区内数据和读取分区数据均不需要做全表扫描，可以提高处理效率。
 
 在 create table…as select…语句中，如果在 select 子句中使用常量作为列的值，建议指定列的名字；否则创建的表 sale_detail_ctas3 的第四、五列类似于 `_c5`、`_c6`。
 
