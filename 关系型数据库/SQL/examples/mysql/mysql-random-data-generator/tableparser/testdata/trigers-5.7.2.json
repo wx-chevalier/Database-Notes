@@ -1,0 +1,18 @@
+[
+  {
+    "Trigger": "rental_date",
+    "Event": "INSERT",
+    "Table": "rental",
+    "Statement": "SET NEW.rental_date = NOW()",
+    "Timing": "BEFORE",
+    "Created": {
+      "Time": "2009-11-10T23:00:00Z",
+      "Valid": true
+    },
+    "SQLMode": "",
+    "Definer": "msandbox@%",
+    "CharacterSetClient": "latin1",
+    "CollationConnection": "latin1_swedish_ci",
+    "DatabaseCollation": "latin1_swedish_ci"
+  }
+]

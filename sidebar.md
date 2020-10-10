@@ -70,6 +70,22 @@
     - [RocksDB](/关系型数据库/RocksDB/README.md)
       
     - [SQL](/关系型数据库/SQL/README.md)
+      - [examples](/关系型数据库/SQL/examples/README.md)
+        - exercises
+          - [wikibooks](/关系型数据库/SQL/examples/exercises/wikibooks/README.md)
+            
+        - mysql
+          - [mysql backup](/关系型数据库/SQL/examples/mysql/mysql-backup/README.md)
+            
+          - [mysql employees](/关系型数据库/SQL/examples/mysql/mysql-employees/README.md)
+            - [sakila](/关系型数据库/SQL/examples/mysql/mysql-employees/sakila/README.md)
+              
+          - [mysql local](/关系型数据库/SQL/examples/mysql/mysql-local/README.md)
+            
+          - [mysql random data generator](/关系型数据库/SQL/examples/mysql/mysql-random-data-generator/README.md)
+            
+          - [mysql replication](/关系型数据库/SQL/examples/mysql/mysql-replication/README.md)
+            
       - [数据库设计](/关系型数据库/SQL/数据库设计/README.md)
         - [数据库范式](/关系型数据库/SQL/数据库设计/数据库范式.md)
         - [数据建模](/关系型数据库/SQL/数据库设计/数据建模.md)

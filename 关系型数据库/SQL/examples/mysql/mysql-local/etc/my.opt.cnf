@@ -1,0 +1,154 @@
+# Optimized my.cnf configuration for MySQL/MariaSQL
+#
+# by Fotis Evangelou, developer of Engintron (engintron.com)
+#
+# === Updated December 2018 ===
+#
+# The settings provided below are a starting point for a 2GB - 4GB RAM server with 2-4 CPU cores.
+# If you have less or more resources available you should adjust accordingly to save CPU,
+# RAM and disk I/O usage.
+# The settings marked with a specific comment or the word "UPD" after the value
+# should be adjusted for your system by using database diagnostics tools like:
+# https://github.com/major/MySQLTuner-perl
+# or
+# https://launchpad.net/mysql-tuning-primer (supports MySQL up to v5.6)
+#
+#
+# Note that if there is NO comment after a setting value, then 99,9% of the times you won't need to adjust it.
+#
+#
+# THINGS TO DO AFTER YOU UPDATE MY.CNF - TROUBLESHOOTING
+# If any terminal commands are mentioned, make sure you execute them as "root" user.
+# If MySQL cannot start or restart, then perform the following actions.
+#
+# 1. If the server had the stock database configuration and you added or updated any
+#    "innodb_log_*" settings (as suggested below), then execute these commands ONLY
+#    the first time you apply this configuration:
+#
+#    $ rm -rvf /var/lib/mysql/ib_logfile*
+#    $ chown -R mysql:mysql /var/lib/mysql
+#    $ service mysql restart
+#
+#    or use the shorthand command:
+#    $ rm -rvf /var/lib/mysql/ib_logfile*; chown -R mysql:mysql /var/lib/mysql; service mysql restart
+#
+# 2. If the setting "bind-address" is not commented out, then make sure the file /etc/hosts is
+#    properly configured. A good example of a "clean" /etc/hosts file is something like this:
+#
+#    127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4
+#    ::1       localhost localhost.localdomain localhost6 localhost6.localdomain6
+#    1.2.3.4   hostname.domain.tld hostname # Replace accordingly!
+#
+#    Finally restart the database service:
+#
+#    $ service mysql restart
+#
+# 3. If the database service cannot restart even after the first 2 steps, make sure the database data folder
+#    (common for either MySQL or MariaDB) "/var/lib/mysql" is owned by the "mysql" user AND group.
+#    Additionally, the folder itself can have 0751 or 0755 file permissions. To fix it, simply do this:
+#    $ chown -R mysql:mysql /var/lib/mysql
+#    $ chmod 0755 /var/lib/mysql
+#
+#    Finally restart the database service:
+#
+#    $ service mysql restart
+
+[mysql]
+port                            = 3306
+socket                          = /var/run/mysqld/mysqld.sock
+
+[mysqld]
+# Required Settings
+basedir                         = /usr
+bind_address                    = 127.0.0.1 # Change to 0.0.0.0 to allow remote servers to connect to this server's
+                                            # database instance
+datadir                         = /var/lib/mysql
+max_allowed_packet              = 256M
+max_connect_errors              = 1000000
+pid_file                        = /var/run/mysqld/mysqld.pid
+port                            = 3306
+skip_external_locking
+skip_name_resolve
+socket                          = /var/run/mysqld/mysqld.sock
+#sql_mode                       = ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION,ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES # Enable for b/c with databases
+                                                                                                                                               # using null dates
+tmpdir                          = /tmp
+user                            = mysql
+
+# InnoDB Settings
+default_storage_engine          = InnoDB
+innodb_buffer_pool_instances    = 2     # Use 1 instance per 1GB of InnoDB pool size
+innodb_buffer_pool_size         = 2G    # Use up to 70-80% of RAM & optionally check if /proc/sys/vm/swappiness is set to 0
+innodb_file_per_table           = 1
+innodb_flush_log_at_trx_commit  = 0
+innodb_flush_method             = O_DIRECT
+innodb_log_buffer_size          = 16M
+innodb_log_file_size            = 512M
+innodb_stats_on_metadata        = 0
+
+#innodb_temp_data_file_path     = ibtmp1:64M:autoextend:max:20G # Control the maximum size for the ibtmp1 file
+#innodb_thread_concurrency      = 4     # Optional: Set to the number of CPUs on your system (minus 1 or 2) to better
+                                        # contain CPU usage. E.g. if your system has 8 CPUs, try 6 or 7 and check
+                                        # the overall load produced by MySQL/MariaDB.
+innodb_read_io_threads          = 64
+innodb_write_io_threads         = 64
+
+# MyISAM Settings
+query_cache_limit               = 4M    # UPD
+query_cache_size                = 48M   # UPD
+query_cache_type                = 1
+
+key_buffer_size                 = 48M   # UPD
+
+low_priority_updates            = 1
+concurrent_insert               = 2
+
+# Connection Settings
+max_connections                 = 100   # UPD
+
+back_log                        = 512
+thread_cache_size               = 100
+thread_stack                    = 192K
+
+interactive_timeout             = 180
+wait_timeout                    = 180
+
+# Buffer Settings
+join_buffer_size                = 4M    # UPD
+read_buffer_size                = 3M    # UPD
+read_rnd_buffer_size            = 4M    # UPD
+sort_buffer_size                = 4M    # UPD
+
+# Table Settings
+# In systemd managed systems like Ubuntu 16.04 or CentOS 7, you need to perform an extra action for table_open_cache & open_files_limit
+# to be overriden (also see comment next to open_files_limit).
+# E.g. for MySQL 5.7, please check: https://dev.mysql.com/doc/refman/5.7/en/using-systemd.html
+# and for MariaDB check: https://mariadb.com/kb/en/library/systemd/
+table_definition_cache          = 10000 # UPD
+table_open_cache                = 10000 # UPD
+open_files_limit                = 60000 # UPD - This can be 2x to 3x the table_open_cache value or match the system's
+                                        # open files limit usually set in /etc/sysctl.conf or /etc/security/limits.conf
+                                        # In systemd managed systems this limit must also be set in:
+                                        # /etc/systemd/system/mysqld.service.d/override.conf (for MySQL 5.7+) and
+                                        # /etc/systemd/system/mariadb.service.d/override.conf (for MariaDB)
+
+max_heap_table_size             = 128M
+tmp_table_size                  = 128M
+
+# Search Settings
+ft_min_word_len                 = 3     # Minimum length of words to be indexed for search results
+
+# Logging
+log_error                       = /var/lib/mysql/mysql_error.log
+log_queries_not_using_indexes   = 1
+long_query_time                 = 5
+slow_query_log                  = 0     # Disabled for production
+slow_query_log_file             = /var/lib/mysql/mysql_slow.log
+
+[mysqldump]
+# Variable reference
+# For MySQL 5.7: https://dev.mysql.com/doc/refman/5.7/en/mysqldump.html
+# For MariaDB:   https://mariadb.com/kb/en/library/mysqldump/
+quick
+quote_names
+max_allowed_packet              = 64M

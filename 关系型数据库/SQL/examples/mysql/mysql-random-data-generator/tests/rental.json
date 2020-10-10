@@ -1,0 +1,532 @@
+{
+  "Schema": "sakila",
+  "Name": "rental",
+  "Fields": [
+    {
+      "TableCatalog": "def",
+      "TableSchema": "sakila",
+      "TableName": "rental",
+      "ColumnName": "rental_id",
+      "OrdinalPosition": 1,
+      "ColumnDefault": {
+        "String": "",
+        "Valid": false
+      },
+      "IsNullable": false,
+      "DataType": "int",
+      "CharacterMaximumLength": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "CharacterOctetLength": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "NumericPrecision": {
+        "Int64": 10,
+        "Valid": true
+      },
+      "NumericScale": {
+        "Int64": 0,
+        "Valid": true
+      },
+      "DatetimePrecision": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "CharacterSetName": {
+        "String": "",
+        "Valid": false
+      },
+      "CollationName": {
+        "String": "",
+        "Valid": false
+      },
+      "ColumnType": "int(11)",
+      "ColumnKey": "PRI",
+      "Extra": "auto_increment",
+      "Privileges": "select,insert,update,references",
+      "ColumnComment": "",
+      "GenerationExpression": "",
+      "SetEnumVals": [],
+      "Constraint": null
+    },
+    {
+      "TableCatalog": "def",
+      "TableSchema": "sakila",
+      "TableName": "rental",
+      "ColumnName": "rental_date",
+      "OrdinalPosition": 2,
+      "ColumnDefault": {
+        "String": "",
+        "Valid": false
+      },
+      "IsNullable": false,
+      "DataType": "datetime",
+      "CharacterMaximumLength": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "CharacterOctetLength": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "NumericPrecision": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "NumericScale": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "DatetimePrecision": {
+        "Int64": 0,
+        "Valid": true
+      },
+      "CharacterSetName": {
+        "String": "",
+        "Valid": false
+      },
+      "CollationName": {
+        "String": "",
+        "Valid": false
+      },
+      "ColumnType": "datetime",
+      "ColumnKey": "MUL",
+      "Extra": "",
+      "Privileges": "select,insert,update,references",
+      "ColumnComment": "",
+      "GenerationExpression": "",
+      "SetEnumVals": [],
+      "Constraint": null
+    },
+    {
+      "TableCatalog": "def",
+      "TableSchema": "sakila",
+      "TableName": "rental",
+      "ColumnName": "inventory_id",
+      "OrdinalPosition": 3,
+      "ColumnDefault": {
+        "String": "",
+        "Valid": false
+      },
+      "IsNullable": false,
+      "DataType": "mediumint",
+      "CharacterMaximumLength": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "CharacterOctetLength": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "NumericPrecision": {
+        "Int64": 7,
+        "Valid": true
+      },
+      "NumericScale": {
+        "Int64": 0,
+        "Valid": true
+      },
+      "DatetimePrecision": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "CharacterSetName": {
+        "String": "",
+        "Valid": false
+      },
+      "CollationName": {
+        "String": "",
+        "Valid": false
+      },
+      "ColumnType": "mediumint(8) unsigned",
+      "ColumnKey": "MUL",
+      "Extra": "",
+      "Privileges": "select,insert,update,references",
+      "ColumnComment": "",
+      "GenerationExpression": "",
+      "SetEnumVals": [],
+      "Constraint": {
+        "ConstraintName": "fk_rental_inventory",
+        "ColumnName": "inventory_id",
+        "ReferencedTableSchema": "sakila",
+        "ReferencedTableName": "inventory",
+        "ReferencedColumnName": "inventory_id"
+      }
+    },
+    {
+      "TableCatalog": "def",
+      "TableSchema": "sakila",
+      "TableName": "rental",
+      "ColumnName": "customer_id",
+      "OrdinalPosition": 4,
+      "ColumnDefault": {
+        "String": "",
+        "Valid": false
+      },
+      "IsNullable": false,
+      "DataType": "smallint",
+      "CharacterMaximumLength": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "CharacterOctetLength": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "NumericPrecision": {
+        "Int64": 5,
+        "Valid": true
+      },
+      "NumericScale": {
+        "Int64": 0,
+        "Valid": true
+      },
+      "DatetimePrecision": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "CharacterSetName": {
+        "String": "",
+        "Valid": false
+      },
+      "CollationName": {
+        "String": "",
+        "Valid": false
+      },
+      "ColumnType": "smallint(5) unsigned",
+      "ColumnKey": "MUL",
+      "Extra": "",
+      "Privileges": "select,insert,update,references",
+      "ColumnComment": "",
+      "GenerationExpression": "",
+      "SetEnumVals": [],
+      "Constraint": {
+        "ConstraintName": "fk_rental_customer",
+        "ColumnName": "customer_id",
+        "ReferencedTableSchema": "sakila",
+        "ReferencedTableName": "customer",
+        "ReferencedColumnName": "customer_id"
+      }
+    },
+    {
+      "TableCatalog": "def",
+      "TableSchema": "sakila",
+      "TableName": "rental",
+      "ColumnName": "return_date",
+      "OrdinalPosition": 5,
+      "ColumnDefault": {
+        "String": "",
+        "Valid": false
+      },
+      "IsNullable": true,
+      "DataType": "datetime",
+      "CharacterMaximumLength": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "CharacterOctetLength": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "NumericPrecision": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "NumericScale": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "DatetimePrecision": {
+        "Int64": 0,
+        "Valid": true
+      },
+      "CharacterSetName": {
+        "String": "",
+        "Valid": false
+      },
+      "CollationName": {
+        "String": "",
+        "Valid": false
+      },
+      "ColumnType": "datetime",
+      "ColumnKey": "",
+      "Extra": "",
+      "Privileges": "select,insert,update,references",
+      "ColumnComment": "",
+      "GenerationExpression": "",
+      "SetEnumVals": [],
+      "Constraint": null
+    },
+    {
+      "TableCatalog": "def",
+      "TableSchema": "sakila",
+      "TableName": "rental",
+      "ColumnName": "staff_id",
+      "OrdinalPosition": 6,
+      "ColumnDefault": {
+        "String": "",
+        "Valid": false
+      },
+      "IsNullable": false,
+      "DataType": "tinyint",
+      "CharacterMaximumLength": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "CharacterOctetLength": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "NumericPrecision": {
+        "Int64": 3,
+        "Valid": true
+      },
+      "NumericScale": {
+        "Int64": 0,
+        "Valid": true
+      },
+      "DatetimePrecision": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "CharacterSetName": {
+        "String": "",
+        "Valid": false
+      },
+      "CollationName": {
+        "String": "",
+        "Valid": false
+      },
+      "ColumnType": "tinyint(3) unsigned",
+      "ColumnKey": "MUL",
+      "Extra": "",
+      "Privileges": "select,insert,update,references",
+      "ColumnComment": "",
+      "GenerationExpression": "",
+      "SetEnumVals": [],
+      "Constraint": {
+        "ConstraintName": "fk_rental_staff",
+        "ColumnName": "staff_id",
+        "ReferencedTableSchema": "sakila",
+        "ReferencedTableName": "staff",
+        "ReferencedColumnName": "staff_id"
+      }
+    },
+    {
+      "TableCatalog": "def",
+      "TableSchema": "sakila",
+      "TableName": "rental",
+      "ColumnName": "last_update",
+      "OrdinalPosition": 7,
+      "ColumnDefault": {
+        "String": "CURRENT_TIMESTAMP",
+        "Valid": true
+      },
+      "IsNullable": false,
+      "DataType": "timestamp",
+      "CharacterMaximumLength": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "CharacterOctetLength": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "NumericPrecision": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "NumericScale": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "DatetimePrecision": {
+        "Int64": 0,
+        "Valid": true
+      },
+      "CharacterSetName": {
+        "String": "",
+        "Valid": false
+      },
+      "CollationName": {
+        "String": "",
+        "Valid": false
+      },
+      "ColumnType": "timestamp",
+      "ColumnKey": "",
+      "Extra": "on update CURRENT_TIMESTAMP",
+      "Privileges": "select,insert,update,references",
+      "ColumnComment": "",
+      "GenerationExpression": "",
+      "SetEnumVals": [],
+      "Constraint": null
+    }
+  ],
+  "Indexes": [
+    {
+      "NonUnique": false,
+      "KeyName": "PRIMARY",
+      "SeqInIndex": 1,
+      "ColumnName": "rental_id",
+      "Collation": "A",
+      "Cardinality": 137529,
+      "SubPart": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "Packed": {
+        "String": "",
+        "Valid": false
+      },
+      "Null": "",
+      "IndexType": "BTREE",
+      "Comment": "",
+      "IndexComment": ""
+    },
+    {
+      "NonUnique": false,
+      "KeyName": "rental_date",
+      "SeqInIndex": 1,
+      "ColumnName": "rental_date",
+      "Collation": "A",
+      "Cardinality": 88,
+      "SubPart": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "Packed": {
+        "String": "",
+        "Valid": false
+      },
+      "Null": "",
+      "IndexType": "BTREE",
+      "Comment": "",
+      "IndexComment": ""
+    },
+    {
+      "NonUnique": false,
+      "KeyName": "rental_date",
+      "SeqInIndex": 2,
+      "ColumnName": "inventory_id",
+      "Collation": "A",
+      "Cardinality": 5129,
+      "SubPart": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "Packed": {
+        "String": "",
+        "Valid": false
+      },
+      "Null": "",
+      "IndexType": "BTREE",
+      "Comment": "",
+      "IndexComment": ""
+    },
+    {
+      "NonUnique": false,
+      "KeyName": "rental_date",
+      "SeqInIndex": 3,
+      "ColumnName": "customer_id",
+      "Collation": "A",
+      "Cardinality": 139228,
+      "SubPart": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "Packed": {
+        "String": "",
+        "Valid": false
+      },
+      "Null": "",
+      "IndexType": "BTREE",
+      "Comment": "",
+      "IndexComment": ""
+    },
+    {
+      "NonUnique": true,
+      "KeyName": "idx_fk_inventory_id",
+      "SeqInIndex": 1,
+      "ColumnName": "inventory_id",
+      "Collation": "A",
+      "Cardinality": 270,
+      "SubPart": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "Packed": {
+        "String": "",
+        "Valid": false
+      },
+      "Null": "",
+      "IndexType": "BTREE",
+      "Comment": "",
+      "IndexComment": ""
+    },
+    {
+      "NonUnique": true,
+      "KeyName": "idx_fk_customer_id",
+      "SeqInIndex": 1,
+      "ColumnName": "customer_id",
+      "Collation": "A",
+      "Cardinality": 381,
+      "SubPart": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "Packed": {
+        "String": "",
+        "Valid": false
+      },
+      "Null": "",
+      "IndexType": "BTREE",
+      "Comment": "",
+      "IndexComment": ""
+    },
+    {
+      "NonUnique": true,
+      "KeyName": "idx_fk_staff_id",
+      "SeqInIndex": 1,
+      "ColumnName": "staff_id",
+      "Collation": "A",
+      "Cardinality": 1,
+      "SubPart": {
+        "Int64": 0,
+        "Valid": false
+      },
+      "Packed": {
+        "String": "",
+        "Valid": false
+      },
+      "Null": "",
+      "IndexType": "BTREE",
+      "Comment": "",
+      "IndexComment": ""
+    }
+  ],
+  "Constraints": [
+    {
+      "ConstraintName": "fk_rental_customer",
+      "ColumnName": "customer_id",
+      "ReferencedTableSchema": "sakila",
+      "ReferencedTableName": "customer",
+      "ReferencedColumnName": "customer_id"
+    },
+    {
+      "ConstraintName": "fk_rental_inventory",
+      "ColumnName": "inventory_id",
+      "ReferencedTableSchema": "sakila",
+      "ReferencedTableName": "inventory",
+      "ReferencedColumnName": "inventory_id"
+    },
+    {
+      "ConstraintName": "fk_rental_staff",
+      "ColumnName": "staff_id",
+      "ReferencedTableSchema": "sakila",
+      "ReferencedTableName": "staff",
+      "ReferencedColumnName": "staff_id"
+    }
+  ]
+}
