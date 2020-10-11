@@ -163,6 +163,20 @@
       - [避免错误](/拆分与调优/记录与衍生/避免错误.md)
     - [读写分离](/拆分与调优/读写分离/README.md)
       - [读写分离](/拆分与调优/读写分离/读写分离.md)
+  - 搜索引擎
+    - [ElasticSearch](/搜索引擎/ElasticSearch/README.md)
+      - SDK 使用
+        - [Java](/搜索引擎/ElasticSearch/SDK%20使用/Java.md)
+      - 数据操作
+        - [数据检索](/搜索引擎/ElasticSearch/数据操作/数据检索.md)
+        - [索引操作](/搜索引擎/ElasticSearch/数据操作/索引操作.md)
+      - [架构原理](/搜索引擎/ElasticSearch/架构原理/README.md)
+        
+      - [集群与高可用](/搜索引擎/ElasticSearch/集群与高可用/README.md)
+        
+    - 全文索引
+      - [全文索引](/搜索引擎/全文索引/全文索引.md)
+      - [动态全文索引](/搜索引擎/全文索引/动态全文索引.md)
   - 数据仓库
     - HBase
       - [CRUD](/数据仓库/HBase/CRUD.md)
@@ -218,10 +232,7 @@
       - [哈希索引](/数据库理论/存储引擎/哈希索引.md)
       - [无索引](/数据库理论/存储引擎/无索引.md)
       - [编码](/数据库理论/存储引擎/编码.md)
-    - [搜索引擎](/数据库理论/搜索引擎/README.md)
-      
     - [数据仓库](/数据库理论/数据仓库/README.md)
-      - [OLTP 与 OLAP](/数据库理论/数据仓库/OLTP%20与%20OLAP.md)
       - [列存储](/数据库理论/数据仓库/列存储/README.md)
         - [写入与更新](/数据库理论/数据仓库/列存储/写入与更新.md)
       - [多维数据模型](/数据库理论/数据仓库/多维数据模型/README.md)
@@ -240,16 +251,6 @@
       - [时序模型](/数据库理论/数据模型/时序模型.md)
       - [查询语言](/数据库理论/数据模型/查询语言.md)
   - 文档型数据库
-    - [ElasticSearch](/文档型数据库/ElasticSearch/README.md)
-      - SDK 使用
-        - [Java](/文档型数据库/ElasticSearch/SDK%20使用/Java.md)
-      - 数据操作
-        - [数据检索](/文档型数据库/ElasticSearch/数据操作/数据检索.md)
-        - [索引操作](/文档型数据库/ElasticSearch/数据操作/索引操作.md)
-      - [架构原理](/文档型数据库/ElasticSearch/架构原理/README.md)
-        
-      - [集群与高可用](/文档型数据库/ElasticSearch/集群与高可用/README.md)
-        
     - [Mongodb](/文档型数据库/Mongodb/README.md)
       
   - [时序数据库](/时序数据库/README.md)
