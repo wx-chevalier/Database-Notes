@@ -42,7 +42,7 @@ Prometheus 的优势在于其易于安装使用，外部依赖较少；并且直
 
 OpenTSDB 的数据模型与 Prometheus 几乎相同，查询语言上 PromQL 更简洁，OpenTSDB 功能更丰富。OpenTSDB 依赖的是 Hadoop 生态,Prometheus 成长于 Kubernetes 生态。
 
-# 链接
+# TBD
 
 - https://mp.weixin.qq.com/s/0vZLCZBPFfOMNqubpQUrbg
 - https://mp.weixin.qq.com/s/0vZLCZBPFfOMNqubpQUrbg

@@ -8,6 +8,6 @@
 
 - Phase 3: Analyze. Scans the resolved AST, looking for columns which are compared for equality.
 
-# 链接
+# TBD
 
 - https://marianogappa.github.io/software/2019/06/05/lets-build-a-sql-parser-in-go/

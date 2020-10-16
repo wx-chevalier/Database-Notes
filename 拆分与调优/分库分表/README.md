@@ -48,7 +48,7 @@
 
 所以数据水平拆分除了需要一个强大的分库分表数据访问中间件，还需要一个分布式序列生成器。当然这个生成器也可以是集成在分库分表数据访问中间件中的一个功能。
 
-# 链接
+# TBD
 
 - https://mp.weixin.qq.com/s/GzeeeJy_gBAOt8v8P2w8xg?from=groupmessage&isappinstalled=0
 - https://mp.weixin.qq.com/s/h99sXP4mvVFsJw6Oh3aU5A

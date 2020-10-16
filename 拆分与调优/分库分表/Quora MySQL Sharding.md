@@ -1,5 +1,5 @@
 # Quora MySQL Sharding
 
-# 链接
+# TBD
 
 - https://www.codercto.com/a/109091.html

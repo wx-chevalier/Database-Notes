@@ -16,6 +16,6 @@ MySQL 中的事务管理概述了数据插入、更新、删除等流程中的�
 
 - 事务提交，将 redolog 的状态改为 commited 释放锁。
 
-# 链接
+# TBD
 
 - https://parg.co/LeO Mysql 事务-你想知道的都在这

@@ -27,6 +27,6 @@
 
 ![中台架构图](https://s2.ax1x.com/2019/10/20/Ku7Faj.jpg)
 
-# 链接
+# TBD
 
 - https://www.infoq.cn/article/zCf76o7YlsAN6AbOeQL0
