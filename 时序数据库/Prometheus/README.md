@@ -1,4 +1,4 @@
-> 导读：参考《[Kubernetes 实战](https://github.com/wx-chevalier/Cloud-Series)》了解 K8s 中 Prometheus 的应用。
+> 导读：参考[《Kubernetes 实战](https://github.com/wx-chevalier/Cloud-Series)》了解 K8s 中 Prometheus 的应用。
 
 # 基于 Prometheus 的线上应用监控
 
