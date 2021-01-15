@@ -77,7 +77,7 @@ BigTable 及其他类似的数据库也提出了所谓宽表（Wide Column）模
 WHERE product_sk IN（30，68，69）
 ```
 
-加载 `product_sk = 30` , `product_sk = 68` , `product_sk = 69` 的三个位图，并计算三个位图的按位或，这可以非常有效地完成。
+加载 `product_sk = 30`, `product_sk = 68`, `product_sk = 69` 的三个位图，并计算三个位图的按位或，这可以非常有效地完成。
 
 ```
 WHERE product_sk = 31 AND store_sk = 3
