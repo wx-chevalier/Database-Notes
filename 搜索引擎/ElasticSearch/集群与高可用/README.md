@@ -26,6 +26,6 @@ $ docker service update --replicas=3 <replica_id>
 
 ## 多集群
 
-# TBD
+# Links
 
 - https://logz.io/blog/elasticsearch-cluster-tutorial/
