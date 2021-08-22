@@ -172,3 +172,5 @@
         - [9.3.5.4 Sentinel](/键值型数据库/Redis/集群/Sentinel.md)
     - 9.4 RocksDB
       - [9.4.1 READNE](/键值型数据库/RocksDB/READNE.md)
+    - 9.5 Scratch
+      - [9.5.1 基于哈希索引的 KV 数据库](/键值型数据库/Scratch/基于哈希索引的%20KV%20数据库.md)
