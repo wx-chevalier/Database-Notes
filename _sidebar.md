@@ -1,52 +1,50 @@
   - [1 INTRODUCTION](/INTRODUCTION.md)
-  - [2 关系型数据库 [4]](/关系型数据库/README.md)
+  - [2 关系型数据库](/关系型数据库/README.md)
     - [2.1 MySQL](/关系型数据库/MySQL/README.md)
       
-    - [2.2 PostgreSQL [3]](/关系型数据库/PostgreSQL/README.md)
-      - [2.2.1 数据类型 [1]](/关系型数据库/PostgreSQL/数据类型/README.md)
+    - [2.2 PostgreSQL](/关系型数据库/PostgreSQL/README.md)
+      - [2.2.1 数据类型](/关系型数据库/PostgreSQL/数据类型/README.md)
         - [2.2.1.1 时间与日期](/关系型数据库/PostgreSQL/数据类型/时间与日期.md)
-      - [2.2.2 架构机制 [5]](/关系型数据库/PostgreSQL/架构机制/README.md)
+      - [2.2.2 架构机制](/关系型数据库/PostgreSQL/架构机制/README.md)
         - [2.2.2.1 并发控制](/关系型数据库/PostgreSQL/架构机制/并发控制.md)
         - [2.2.2.2 持久化与缓冲区管理](/关系型数据库/PostgreSQL/架构机制/持久化与缓冲区管理.md)
         - [2.2.2.3 数据库架构](/关系型数据库/PostgreSQL/架构机制/数据库架构.md)
         - [2.2.2.4 日志备份与恢复](/关系型数据库/PostgreSQL/架构机制/日志备份与恢复.md)
         - [2.2.2.5 查询处理](/关系型数据库/PostgreSQL/架构机制/查询处理.md)
-      - [2.2.3 管理与配置 [2]](/关系型数据库/PostgreSQL/管理与配置/README.md)
+      - [2.2.3 管理与配置](/关系型数据库/PostgreSQL/管理与配置/README.md)
         - [2.2.3.1 数据库管理](/关系型数据库/PostgreSQL/管理与配置/数据库管理.md)
         - [2.2.3.2 部署与配置](/关系型数据库/PostgreSQL/管理与配置/部署与配置.md)
     - [2.3 RocksDB](/关系型数据库/RocksDB/README.md)
       
     - [2.4 SQLServer](/关系型数据库/SQLServer/README.md)
       
-  - [3 分布式数据库 [4]](/分布式数据库/README.md)
+  - [3 分布式数据库](/分布式数据库/README.md)
     - [3.1 Aurora](/分布式数据库/Aurora/README.md)
       
     - [3.2 F1](/分布式数据库/F1/README.md)
       
-    - [3.3 TiDB [3]](/分布式数据库/TiDB/README.md)
+    - [3.3 TiDB](/分布式数据库/TiDB/README.md)
       - [3.3.1 TiFlash](/分布式数据库/TiDB/TiFlash/README.md)
         
-      - 3.3.2 TiKV [2]
+      - 3.3.2 TiKV
         - [3.3.2.1 副本与分片](/分布式数据库/TiDB/TiKV/副本与分片.md)
-        - [3.3.2.2 存储 [2]](/分布式数据库/TiDB/TiKV/存储/README.md)
+        - [3.3.2.2 存储](/分布式数据库/TiDB/TiKV/存储/README.md)
           - [3.3.2.2.1 Raft 优化](/分布式数据库/TiDB/TiKV/存储/Raft%20优化.md)
           - [3.3.2.2.2 存储架构](/分布式数据库/TiDB/TiKV/存储/存储架构.md)
-      - 3.3.3 参考资料 [1]
-        - [3.3.3.1 三篇文章了解 TiDB 技术内幕](/分布式数据库/TiDB/.more/2017-三篇文章了解%20TiDB%20技术内幕.md)
     - [3.4 系统设计](/分布式数据库/系统设计/README.md)
       
-  - [4 图数据库 [3]](/图数据库/README.md)
+  - [4 图数据库](/图数据库/README.md)
     - [4.1 Neo4j](/图数据库/Neo4j/README.md)
       
     - [4.2 查询语言](/图数据库/查询语言/README.md)
       
-    - 4.3 系统设计 [1]
+    - 4.3 系统设计
       - [4.3.1 图数据库案例](/图数据库/系统设计/图数据库案例.md)
-  - [5 搜索引擎 [2]](/搜索引擎/README.md)
-    - [5.1 ElasticSearch [4]](/搜索引擎/ElasticSearch/README.md)
-      - 5.1.1 SDK 使用 [1]
+  - [5 搜索引擎](/搜索引擎/README.md)
+    - [5.1 ElasticSearch](/搜索引擎/ElasticSearch/README.md)
+      - 5.1.1 SDK 使用
         - [5.1.1.1 Java](/搜索引擎/ElasticSearch/SDK%20使用/Java.md)
-      - 5.1.2 数据操作 [2]
+      - 5.1.2 数据操作
         - [5.1.2.1 数据检索](/搜索引擎/ElasticSearch/数据操作/数据检索.md)
         - [5.1.2.2 索引操作](/搜索引擎/ElasticSearch/数据操作/索引操作.md)
       - [5.1.3 架构原理](/搜索引擎/ElasticSearch/架构原理/README.md)
@@ -55,14 +53,14 @@
         
     - [5.2 MeiliSearch](/搜索引擎/MeiliSearch/README.md)
       
-  - [6 数据库基础 [4]](/数据库基础/README.md)
-    - [6.1 存储引擎 [4]](/数据库基础/存储引擎/README.md)
-      - 6.1.1 全文索引 [2]
+  - [6 数据库基础](/数据库基础/README.md)
+    - [6.1 存储引擎](/数据库基础/存储引擎/README.md)
+      - 6.1.1 全文索引
         - [6.1.1.1 全文索引](/数据库基础/存储引擎/全文索引/全文索引.md)
         - [6.1.1.2 动态全文索引](/数据库基础/存储引擎/全文索引/动态全文索引.md)
-      - [6.1.2 列存储 [1]](/数据库基础/存储引擎/列存储/README.md)
+      - [6.1.2 列存储](/数据库基础/存储引擎/列存储/README.md)
         - [6.1.2.1 写入与更新](/数据库基础/存储引擎/列存储/写入与更新.md)
-      - [6.1.3 索引 [7]](/数据库基础/存储引擎/索引/README.md)
+      - [6.1.3 索引](/数据库基础/存储引擎/索引/README.md)
         - [6.1.3.1 B Tree](/数据库基础/存储引擎/索引/B-Tree.md)
         - [6.1.3.2 LSM Tree](/数据库基础/存储引擎/索引/LSM-Tree.md)
         - [6.1.3.3 二叉树](/数据库基础/存储引擎/索引/二叉树.md)
@@ -70,54 +68,54 @@
         - [6.1.3.5 哈希索引](/数据库基础/存储引擎/索引/哈希索引.md)
         - [6.1.3.6 数组](/数据库基础/存储引擎/索引/数组.md)
         - [6.1.3.7 无索引](/数据库基础/存储引擎/索引/无索引.md)
-      - 6.1.4 编码与序列化 [1]
+      - 6.1.4 编码与序列化
         - [6.1.4.1 编码](/数据库基础/存储引擎/编码与序列化/编码.md)
-    - [6.2 并发控制 [3]](/数据库基础/并发控制/README.md)
+    - [6.2 并发控制](/数据库基础/并发控制/README.md)
       - [6.2.1 MVCC](/数据库基础/并发控制/MVCC/README.md)
         
-      - [6.2.2 事务特性 [1]](/数据库基础/并发控制/事务特性/README.md)
+      - [6.2.2 事务特性](/数据库基础/并发控制/事务特性/README.md)
         - [6.2.2.1 ACID](/数据库基础/并发控制/事务特性/ACID.md)
-      - [6.2.3 隔离级别 [5]](/数据库基础/并发控制/隔离级别/README.md)
+      - [6.2.3 隔离级别](/数据库基础/并发控制/隔离级别/README.md)
         - [6.2.3.1 可序列化](/数据库基础/并发控制/隔离级别/可序列化.md)
         - [6.2.3.2 快照隔离与可重复读](/数据库基础/并发控制/隔离级别/快照隔离与可重复读.md)
         - [6.2.3.3 读已提交](/数据库基础/并发控制/隔离级别/读已提交.md)
         - [6.2.3.4 读未提交](/数据库基础/并发控制/隔离级别/读未提交.md)
         - [6.2.3.5 防止丢失更新](/数据库基础/并发控制/隔离级别/防止丢失更新.md)
-    - [6.3 数据库简史 [5]](/数据库基础/数据库简史/README.md)
+    - [6.3 数据库简史](/数据库基础/数据库简史/README.md)
       - [6.3.1 DBMS](/数据库基础/数据库简史/DBMS.md)
       - [6.3.2 NoSQL](/数据库基础/数据库简史/NoSQL.md)
       - [6.3.3 性能评测](/数据库基础/数据库简史/性能评测.md)
       - [6.3.4 数据库选择](/数据库基础/数据库简史/数据库选择.md)
       - [6.3.5 编年史](/数据库基础/数据库简史/编年史.md)
-    - [6.4 数据模型 [5]](/数据库基础/数据模型/README.md)
+    - [6.4 数据模型](/数据库基础/数据模型/README.md)
       - [6.4.1 关系模型](/数据库基础/数据模型/关系模型.md)
       - [6.4.2 图模型](/数据库基础/数据模型/图模型.md)
       - [6.4.3 文档模型](/数据库基础/数据模型/文档模型.md)
       - [6.4.4 时序模型](/数据库基础/数据模型/时序模型.md)
       - [6.4.5 查询语言](/数据库基础/数据模型/查询语言.md)
-  - 7 文档型数据库 [1]
+  - 7 文档型数据库
     - [7.1 Mongodb](/文档型数据库/Mongodb/README.md)
       
-  - [8 时序数据库 [7]](/时序数据库/README.md)
+  - [8 时序数据库](/时序数据库/README.md)
     - [8.1 AliyunTSDB](/时序数据库/AliyunTSDB/README.md)
       
-    - [8.2 InfluxDB [3]](/时序数据库/InfluxDB/README.md)
+    - [8.2 InfluxDB](/时序数据库/InfluxDB/README.md)
       - [8.2.1 存储引擎](/时序数据库/InfluxDB/存储引擎.md)
       - [8.2.2 数据模型](/时序数据库/InfluxDB/数据模型.md)
       - [8.2.3 部署配置](/时序数据库/InfluxDB/部署配置.md)
-    - [8.3 OpenTSDB [1]](/时序数据库/OpenTSDB/README.md)
+    - [8.3 OpenTSDB](/时序数据库/OpenTSDB/README.md)
       - [8.3.1 系统设计](/时序数据库/OpenTSDB/系统设计.md)
-    - [8.4 Prometheus [6]](/时序数据库/Prometheus/README.md)
-      - [8.4.1 Alert [2]](/时序数据库/Prometheus/Alert/README.md)
+    - [8.4 Prometheus](/时序数据库/Prometheus/README.md)
+      - [8.4.1 Alert](/时序数据库/Prometheus/Alert/README.md)
         - [8.4.1.1 Alerting Rules](/时序数据库/Prometheus/Alert/Alerting%20Rules.md)
         - [8.4.1.2 Alertmanager](/时序数据库/Prometheus/Alert/Alertmanager.md)
       - [8.4.2 Exporter](/时序数据库/Prometheus/Exporter/README.md)
         
-      - 8.4.3 PTSDB [3]
+      - 8.4.3 PTSDB
         - [8.4.3.1 REAMDE](/时序数据库/Prometheus/PTSDB/REAMDE.md)
         - [8.4.3.2 存储](/时序数据库/Prometheus/PTSDB/存储.md)
         - [8.4.3.3 文件格式](/时序数据库/Prometheus/PTSDB/文件格式.md)
-      - [8.4.4 PromQL [7]](/时序数据库/Prometheus/PromQL/README.md)
+      - [8.4.4 PromQL](/时序数据库/Prometheus/PromQL/README.md)
         - [8.4.4.1 HTTP API](/时序数据库/Prometheus/PromQL/HTTP%20API.md)
         - [8.4.4.2 Recording Rules](/时序数据库/Prometheus/PromQL/Recording%20Rules.md)
         - [8.4.4.3 内置函数](/时序数据库/Prometheus/PromQL/内置函数.md)
@@ -125,52 +123,52 @@
         - [8.4.4.5 数据查询](/时序数据库/Prometheus/PromQL/数据查询.md)
         - [8.4.4.6 数据模型](/时序数据库/Prometheus/PromQL/数据模型.md)
         - [8.4.4.7 聚合操作](/时序数据库/Prometheus/PromQL/聚合操作.md)
-      - 8.4.5 SDK [2]
+      - 8.4.5 SDK
         - [8.4.5.1 Go](/时序数据库/Prometheus/SDK/Go.md)
         - [8.4.5.2 Java](/时序数据库/Prometheus/SDK/Java.md)
-      - [8.4.6 快速开始 [4]](/时序数据库/Prometheus/快速开始/README.md)
+      - [8.4.6 快速开始](/时序数据库/Prometheus/快速开始/README.md)
         - [8.4.6.1 单机部署](/时序数据库/Prometheus/快速开始/单机部署.md)
         - [8.4.6.2 参数配置](/时序数据库/Prometheus/快速开始/参数配置.md)
         - [8.4.6.3 应用监控](/时序数据库/Prometheus/快速开始/应用监控.md)
         - [8.4.6.4 集群部署](/时序数据库/Prometheus/快速开始/集群部署.md)
-    - [8.5 TimescaleDB [1]](/时序数据库/TimescaleDB/README.md)
+    - [8.5 TimescaleDB](/时序数据库/TimescaleDB/README.md)
       - [8.5.1 系统设计](/时序数据库/TimescaleDB/系统设计.md)
     - [8.6 时序对比](/时序数据库/时序对比.md)
     - [8.7 系统设计](/时序数据库/系统设计.md)
-  - 9 键值型数据库 [5]
+  - 9 键值型数据库
     - [9.1 BoltDB](/键值型数据库/BoltDB/README.md)
       
-    - [9.2 LevelDB [2]](/键值型数据库/LevelDB/README.md)
+    - [9.2 LevelDB](/键值型数据库/LevelDB/README.md)
       - [9.2.1 架构机制](/键值型数据库/LevelDB/架构机制.md)
       - [9.2.2 部署配置](/键值型数据库/LevelDB/部署配置.md)
-    - [9.3 Redis [5]](/键值型数据库/Redis/README.md)
-      - [9.3.1 KeyDB [1]](/键值型数据库/Redis/KeyDB/README.md)
+    - [9.3 Redis](/键值型数据库/Redis/README.md)
+      - [9.3.1 KeyDB](/键值型数据库/Redis/KeyDB/README.md)
         - [9.3.1.1 架构机制](/键值型数据库/Redis/KeyDB/架构机制.md)
-      - 9.3.2 工程实践 [4]
+      - 9.3.2 工程实践
         - [9.3.2.1 性能优化](/键值型数据库/Redis/工程实践/性能优化.md)
-        - [9.3.2.2 持久化 [1]](/键值型数据库/Redis/工程实践/持久化/README.md)
+        - [9.3.2.2 持久化](/键值型数据库/Redis/工程实践/持久化/README.md)
           - [9.3.2.2.1 持久化](/键值型数据库/Redis/工程实践/持久化/持久化.md)
         - [9.3.2.3 自定义脚本](/键值型数据库/Redis/工程实践/自定义脚本.md)
         - [9.3.2.4 部署与配置](/键值型数据库/Redis/工程实践/部署与配置.md)
-      - [9.3.3 数据操作 [6]](/键值型数据库/Redis/数据操作/README.md)
+      - [9.3.3 数据操作](/键值型数据库/Redis/数据操作/README.md)
         - [9.3.3.1 事务与管道](/键值型数据库/Redis/数据操作/事务与管道.md)
         - [9.3.3.2 其他类型](/键值型数据库/Redis/数据操作/其他类型.md)
         - [9.3.3.3 基础类型](/键值型数据库/Redis/数据操作/基础类型.md)
         - [9.3.3.4 数据类型实现](/键值型数据库/Redis/数据操作/数据类型实现.md)
         - [9.3.3.5 键基础](/键值型数据库/Redis/数据操作/键基础.md)
         - [9.3.3.6 集合类型](/键值型数据库/Redis/数据操作/集合类型.md)
-      - [9.3.4 架构机制 [5]](/键值型数据库/Redis/架构机制/README.md)
+      - [9.3.4 架构机制](/键值型数据库/Redis/架构机制/README.md)
         - [9.3.4.1 单线程架构](/键值型数据库/Redis/架构机制/单线程架构.md)
         - [9.3.4.2 命令执行](/键值型数据库/Redis/架构机制/命令执行.md)
         - [9.3.4.3 多进程架构](/键值型数据库/Redis/架构机制/多进程架构.md)
         - [9.3.4.4 客户端通信](/键值型数据库/Redis/架构机制/客户端通信.md)
         - [9.3.4.5 深入事件循环](/键值型数据库/Redis/架构机制/深入事件循环.md)
-      - [9.3.5 集群 [4]](/键值型数据库/Redis/集群/README.md)
+      - [9.3.5 集群](/键值型数据库/Redis/集群/README.md)
         - [9.3.5.1 Codis](/键值型数据库/Redis/集群/Codis.md)
         - [9.3.5.2 Redis Cluster](/键值型数据库/Redis/集群/Redis%20Cluster.md)
         - [9.3.5.3 Redis 分片](/键值型数据库/Redis/集群/Redis%20分片.md)
         - [9.3.5.4 Sentinel](/键值型数据库/Redis/集群/Sentinel.md)
-    - 9.4 RocksDB [1]
+    - 9.4 RocksDB
       - [9.4.1 READNE](/键值型数据库/RocksDB/READNE.md)
-    - 9.5 Scratch [1]
+    - 9.5 Scratch
       - [9.5.1 基于哈希索引的 KV 数据库](/键值型数据库/Scratch/基于哈希索引的%20KV%20数据库.md)
