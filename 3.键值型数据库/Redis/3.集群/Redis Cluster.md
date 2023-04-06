@@ -8,8 +8,6 @@ Redis 3.0 集群的工作流程如图 4 所示。
 
 ![img](http://mmbiz.qpic.cn/mmbiz/tzia4bcY5HEKxeYTFdFSwaLu6W5SRXboVsbPPVPFxWHX3Qs38CPS8q4TxcKC6emHlDIq0ZvsopSxq3eiajCOFlWQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1)
 
-_图 4Redis 3.0 集群的工作流程图_
-
 如图 4 所示 Redis 集群内的机器定期交换数据，工作流程如下。
 
 (1) Redis 客户端在 Redis2 实例上访问某个数据。
