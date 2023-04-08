@@ -23,11 +23,11 @@ NewSQL 和 NoSQL 的数据分布是类似的，他们都认为所有数据不适
 
 例如下图所示，我们按照关键字划分为三个范围：[a 开头，h 开头)、[h 开头，p 开头)、[p 开头，无穷）。
 
-![首字母范围划分](https://ngte-superbed.oss-cn-beijing.aliyuncs.com/superbed/2021/08/09/6110b97f5132923bf87e5c68.jpg)
+![首字母范围划分](https://assets.ng-tech.icu/superbed/2021/08/09/6110b97f5132923bf87e5c68.jpg)
 
 如下图所示，这样进行范围查询效率会更高：
 
-![更高效查询](https://ngte-superbed.oss-cn-beijing.aliyuncs.com/superbed/2021/08/09/6110b99e5132923bf87e9a84.jpg)
+![更高效查询](https://assets.ng-tech.icu/superbed/2021/08/09/6110b99e5132923bf87e9a84.jpg)
 
 我们关心的最后一个问题是，当某个分片的数据过大，超过我们所设的阈值时，如何扩展分片？由于有一个中间层进行转换，这也很容易进行，只需要在现有的范围中选取某个点，然后将该范围一分为二，便得到两个分区。如下图所示，当 p-z 的数据量超过阈值，为了避免负载压力，我们拆分该范围。
 
@@ -45,7 +45,7 @@ NewSQL 和 NoSQL 的数据分布是类似的，他们都认为所有数据不适
 
 Raft 算法可以满足可靠复制数据，同时系统能够容忍不超过半数的节点故障。在分布式数据库中，一个分片使用一个共识组(consensus group)复制数据，具体的 Raft 共识组称为 Raft 组(Raft group)，Paxos 共识组称为 Paxos 组(Paxos group)。从 TiDB 官网中找来一张图，TiDB 将一个分片称为一个 Region，如图中有三个 Raft 组，用来复制三个 Region 的数据。
 
-![TiDB Scale-out](https://ngte-superbed.oss-cn-beijing.aliyuncs.com/superbed/2021/08/09/6110cd745132923bf8aa9f79.jpg)
+![TiDB Scale-out](https://assets.ng-tech.icu/superbed/2021/08/09/6110cd745132923bf8aa9f79.jpg)
 
 # SQL 表数据 KV 化存储
 
@@ -77,7 +77,7 @@ CREATE TABLE test (
 
 转换成 KV 存储如图所示：
 
-![关系型转化为 KV 存储](https://ngte-superbed.oss-cn-beijing.aliyuncs.com/superbed/2021/08/09/6110cdf05132923bf8abac4e.jpg)
+![关系型转化为 KV 存储](https://assets.ng-tech.icu/superbed/2021/08/09/6110cdf05132923bf8abac4e.jpg)
 
 当然，这样的存储方式会将 float 等类型通通转换为 string 类型。除此之外，数据库通常会创建一些非主键索引，主要分为两类：唯一索引、非唯一索引。唯一索引比较简单，由于值唯一，我们可以通过如下映射：
 
@@ -85,15 +85,15 @@ CREATE TABLE test (
 /<table>/<index>/<key> -> Value
 ```
 
-![索引键值映射](https://ngte-superbed.oss-cn-beijing.aliyuncs.com/superbed/2021/08/09/6110ce195132923bf8ac1933.jpg)
+![索引键值映射](https://assets.ng-tech.icu/superbed/2021/08/09/6110ce195132923bf8ac1933.jpg)
 
 非唯一索引和主键类似，只不过其值为空。如图所示：
 
-![非唯一索引](https://ngte-superbed.oss-cn-beijing.aliyuncs.com/superbed/2021/08/09/6110ce4d5132923bf8ac9cb1.jpg)
+![非唯一索引](https://assets.ng-tech.icu/superbed/2021/08/09/6110ce4d5132923bf8ac9cb1.jpg)
 
 上述表数据 KV 化规则已经有些陈旧，CockroachDB 最新的映射规则参阅《Structured data encoding in CockroachDB SQL》。但其中的思想是相似的。当然，表数据 KV 化并不只有这种方式，TiDB 则按照如下规则进行映射：
 
-![TiDB 映射规则](https://ngte-superbed.oss-cn-beijing.aliyuncs.com/superbed/2021/08/09/6110cfa45132923bf8af755f.jpg)
+![TiDB 映射规则](https://assets.ng-tech.icu/superbed/2021/08/09/6110cfa45132923bf8af755f.jpg)
 
 # 分布式事务
 
