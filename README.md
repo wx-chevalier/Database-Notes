@@ -1,6 +1,6 @@
 ![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg) ![](https://parg.co/bDm)
 
-[![image.png](https://i.postimg.cc/j24P0gbr/image.png)](https://postimg.cc/wR37DkMW)
+![image.png](https://i.postimg.cc/j24P0gbr/image.png)
 
 # Database Series（数据库·实践笔记）
 
