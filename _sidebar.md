@@ -42,7 +42,7 @@
       - [1.5.3 文档模型](/01.数据库基础/数据模型/文档模型.md)
       - [1.5.4 时序模型](/01.数据库基础/数据模型/时序模型.md)
       - [1.5.5 查询语言](/01.数据库基础/数据模型/查询语言.md)
-  - [2 02.关系型数据库 [4]](/02.关系型数据库/README.md)
+  - [2 02.关系型数据库 [3]](/02.关系型数据库/README.md)
     - [2.1 MySQL](/02.关系型数据库/MySQL/README.md)
       
     - [2.2 PostgreSQL [4]](/02.关系型数据库/PostgreSQL/README.md)
@@ -61,9 +61,7 @@
       - [2.2.4 管理与配置 [2]](/02.关系型数据库/PostgreSQL/管理与配置/README.md)
         - [2.2.4.1 数据库管理](/02.关系型数据库/PostgreSQL/管理与配置/数据库管理.md)
         - [2.2.4.2 部署与配置](/02.关系型数据库/PostgreSQL/管理与配置/部署与配置.md)
-    - [2.3 RocksDB](/02.关系型数据库/RocksDB/README.md)
-      
-    - [2.4 SQLServer](/02.关系型数据库/SQLServer/README.md)
+    - [2.3 SQLServer](/02.关系型数据库/SQLServer/README.md)
       
   - 3 03.键值型数据库 [4]
     - [3.1 BoltDB](/03.键值型数据库/BoltDB/README.md)
