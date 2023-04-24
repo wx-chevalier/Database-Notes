@@ -1,10 +1,10 @@
 ![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg) ![](https://parg.co/bDm)
 
-![image.png](https://i.postimg.cc/j24P0gbr/image.png)
+![image.png](https://assets.ng-tech.icu/item/20230424144159.png)
 
 # Database Series（数据库·实践笔记）
 
-![mindmap](https://i.postimg.cc/k4XKQvh4/Database.png)
+![mindmap](https://assets.ng-tech.icu/item/20230424144227.png)
 
 数据是架构的中心，程序 = 算法 + 数据结构，那么系统 = 业务逻辑 x 数据。可以说很多架构问题都是出在数据层，例如常见的烟囱式系统带来的种种问题，特别是数据孤岛问题，其实本质上的原因就出在没有将数据层打通。
 

@@ -4,7 +4,7 @@ B-Tree 这种数据库索引方式是传统关系型数据库中主要的索引�
 
 LSM-Tree 则采取读写分离的策略，会优先保证写操作的性能；其数据首先存储内存中，而后需要定期 Flush 到硬盘上。LSM-Tree 通过内存插入与磁盘的顺序写，来达到最优的写性能，因为这会大大降低磁盘的寻道次数，一次磁盘 IO 可以写入多个索引块。HBase, Cassandra, RockDB, LevelDB, SQLite 等都是基于 LSM-Tree 来构建索引的数据库；LSM-Tree 的树节点可以分为两种，保存在内存中的称之为 MemTable, 保存在磁盘上的称之为 SSTable。
 
-![image](https://i.postimg.cc/CMn80FyV/51817950-f691bc00-2307-11e9-9492-b819d7a61ec0.png)
+![LSM-Tree 结构](https://assets.ng-tech.icu/item/20230424144120.png)
 
 LSM-Tree 的主要思想是划分不同等级的树。以两级树为例，可以想象一份索引数据由两个树组成，一棵树存在于内存，一棵树存在于磁盘。内存中的树可以可以是 AVL Tree 等结构；因为数据大小是不同的，没必要牺牲 CPU 来达到最小的树高度。而存在于磁盘的树是一棵 B-Tree。
 
