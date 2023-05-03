@@ -17,11 +17,11 @@
 - 共享锁又称读锁，是读取操作创建的锁。其他用户可以并发读取数据，但任何事务都不能对数据进行修改（获取数据上的排他锁），直到已释放所有共享锁。
 - 排他锁又称写锁，如果事务 T 对数据 A 加上排他锁后，则其他事务不能再对 A 加任任何类型的封锁。获准排他锁的事务既能读数据，又能修改数据。
 
-在《[MySQL-Series](https://github.com/wx-chevalier/MySQL-Series?q=)》中我们也讨论了如何触发锁机制，譬如查询加锁，`select * from testlock where id=1 for update;`，即查询时不允许更改，该语句在自动提交为 off 或事务中生效，相当于更改操作，模拟加锁；而更新类操作 `update testlock name=name;` 则是会自动加锁。
+在《[MySQL-Notes](https://github.com/wx-chevalier/MySQL-Notes?q=)》中我们也讨论了如何触发锁机制，譬如查询加锁，`select * from testlock where id=1 for update;`，即查询时不允许更改，该语句在自动提交为 off 或事务中生效，相当于更改操作，模拟加锁；而更新类操作 `update testlock name=name;` 则是会自动加锁。
 
 # MVCC
 
-在《[Concurrent-Series](https://github.com/wx-chevalier/Concurrent-Series?q=)》中我们讨论了两种不同类型的锁：乐观锁（Optimistic Lock）与悲观锁（Pessimistic Lock），前文介绍的各种锁即是悲观锁，而 MVCC(Multiple Version Concurrency Control) 这样的基于数据版本的锁则是乐观锁，它能够保证读写操作之间不会相互阻塞：
+在《[Concurrent-Notes](https://github.com/wx-chevalier/Concurrent-Notes?q=)》中我们讨论了两种不同类型的锁：乐观锁（Optimistic Lock）与悲观锁（Pessimistic Lock），前文介绍的各种锁即是悲观锁，而 MVCC(Multiple Version Concurrency Control) 这样的基于数据版本的锁则是乐观锁，它能够保证读写操作之间不会相互阻塞：
 
 - 每个事务都可以在同一时间修改相同的数据；
 - 每个事务会保有其需要的数据副本；
@@ -37,4 +37,4 @@
 
 - 提高了数据库的并发性能，试想，如果一个数据只有一个版本，那么多个事务对这个数据进行读写是不是需要读写锁来保护? 加锁的话就会造成阻塞，阻塞就会降低并发性能。而在 MVCC 里，每一个事务都有对应的数据版本，事务 A 开启后，即使数据被事务 B 修改，也不影响事务 A 那个版本的数据，事务 A 依然可以无阻塞的读取该数据，当然，只是读取不阻塞，写入还是阻塞的，如果事务 A 也想修改该数据，则必须要等事务 B 提交释放所有锁后，事务 A 才可以修改。所以 MVCC 解决的只是读-写的阻塞问题，写-写依然还是阻塞的。
 
-PostgreSQL 中是依赖于 txid 以及 Commit Log 结合而成的可见性检测机制来实现 MVCC，详情可以参考《[Database-Series/PostgreSQL](https://github.com/wx-chevalier/Database-Series?q=)》中关于并发控制相关的介绍。
+PostgreSQL 中是依赖于 txid 以及 Commit Log 结合而成的可见性检测机制来实现 MVCC，详情可以参考《[Database-Notes/PostgreSQL](https://github.com/wx-chevalier/Database-Notes?q=)》中关于并发控制相关的介绍。

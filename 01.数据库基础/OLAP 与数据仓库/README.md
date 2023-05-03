@@ -1,1 +1,1 @@
-> 本篇参阅《[Datawarehousr-Series](https://github.com/wx-chevalier/Datawarehousr-Series?q=)》
+> 本篇参阅《[Datawarehousr-Notes](https://github.com/wx-chevalier/Datawarehousr-Notes?q=)》

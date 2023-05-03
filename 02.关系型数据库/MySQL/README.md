@@ -1,1 +1,1 @@
-> 该部分迁移到了独立仓库 [MySQL-Series](https://github.com/wx-chevalier/MySQL-Series)。
+> 该部分迁移到了独立仓库 [MySQL-Notes](https://github.com/wx-chevalier/MySQL-Notes)。

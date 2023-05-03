@@ -7,7 +7,7 @@
 - 如何支持 SQL；
 - 分布式事务如何实现；
 
-> 推荐阅读《[DistributedSystem-Series](https://github.com/wx-chevalier/DistributedSystem-Series?q=)》中相关内容。
+> 推荐阅读《[DistributedSystem-Notes](https://github.com/wx-chevalier/DistributedSystem-Notes?q=)》中相关内容。
 
 # 数据分布
 
