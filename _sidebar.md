@@ -45,24 +45,28 @@
   - [2 02.关系型数据库 [4]](/02.关系型数据库/README.md)
     - [2.1 MySQL](/02.关系型数据库/MySQL/README.md)
       
-    - [2.2 PostgreSQL [4]](/02.关系型数据库/PostgreSQL/README.md)
+    - [2.2 PostgreSQL [5]](/02.关系型数据库/PostgreSQL/README.md)
       - [2.2.1 01.部署与配置 [2]](/02.关系型数据库/PostgreSQL/01.部署与配置/README.md)
         - [2.2.1.1 数据库管理](/02.关系型数据库/PostgreSQL/01.部署与配置/数据库管理.md)
         - [2.2.1.2 部署与配置](/02.关系型数据库/PostgreSQL/01.部署与配置/部署与配置.md)
       - [2.2.2 02.数据类型 [1]](/02.关系型数据库/PostgreSQL/02.数据类型/README.md)
         - [2.2.2.1 时间与日期](/02.关系型数据库/PostgreSQL/02.数据类型/时间与日期.md)
-      - [2.2.3 10.架构机制 [6]](/02.关系型数据库/PostgreSQL/10.架构机制/README.md)
-        - [2.2.3.1 并发控制](/02.关系型数据库/PostgreSQL/10.架构机制/并发控制.md)
-        - [2.2.3.2 持久化与缓冲区管理](/02.关系型数据库/PostgreSQL/10.架构机制/持久化与缓冲区管理.md)
-        - [2.2.3.3 数据库架构](/02.关系型数据库/PostgreSQL/10.架构机制/数据库架构.md)
-        - [2.2.3.4 日志备份与恢复](/02.关系型数据库/PostgreSQL/10.架构机制/日志备份与恢复.md)
-        - [2.2.3.5 查询处理](/02.关系型数据库/PostgreSQL/10.架构机制/查询处理.md)
-        - 2.2.3.6 索引 [1]
-          - 2.2.3.6.1 99.参考资料 [1]
-            - [2.2.3.6.1.1 Understanding database Indexes in PostgreSQL](/02.关系型数据库/PostgreSQL/10.架构机制/索引/99.参考资料/2023-Understanding%20database%20Indexes%20in%20PostgreSQL.md)
-      - 2.2.4 99.参考资料 [1]
-        - [2.2.4.1 《PostgreSQL 技术内幕：原理探索》 [1]](/02.关系型数据库/PostgreSQL/99.参考资料/2016-《PostgreSQL%20技术内幕：原理探索》/README.md)
-          - [2.2.4.1.1 1.数据库集簇，数据库，数据表](/02.关系型数据库/PostgreSQL/99.参考资料/2016-《PostgreSQL%20技术内幕：原理探索》/1.数据库集簇，数据库，数据表/README.md)
+      - 2.2.3 09.插件 [1]
+        - 2.2.3.1 pgvector [1]
+          - 2.2.3.1.1 99.参考资料 [1]
+            - [2.2.3.1.1.1 AI 大模型与向量数据库 PGVECTOR](/02.关系型数据库/PostgreSQL/09.插件/pgvector/99.参考资料/2023-AI%20大模型与向量数据库%20PGVECTOR.md)
+      - [2.2.4 10.架构机制 [6]](/02.关系型数据库/PostgreSQL/10.架构机制/README.md)
+        - [2.2.4.1 并发控制](/02.关系型数据库/PostgreSQL/10.架构机制/并发控制.md)
+        - [2.2.4.2 持久化与缓冲区管理](/02.关系型数据库/PostgreSQL/10.架构机制/持久化与缓冲区管理.md)
+        - [2.2.4.3 数据库架构](/02.关系型数据库/PostgreSQL/10.架构机制/数据库架构.md)
+        - [2.2.4.4 日志备份与恢复](/02.关系型数据库/PostgreSQL/10.架构机制/日志备份与恢复.md)
+        - [2.2.4.5 查询处理](/02.关系型数据库/PostgreSQL/10.架构机制/查询处理.md)
+        - 2.2.4.6 索引 [1]
+          - 2.2.4.6.1 99.参考资料 [1]
+            - [2.2.4.6.1.1 Understanding database Indexes in PostgreSQL](/02.关系型数据库/PostgreSQL/10.架构机制/索引/99.参考资料/2023-Understanding%20database%20Indexes%20in%20PostgreSQL.md)
+      - 2.2.5 99.参考资料 [1]
+        - [2.2.5.1 《PostgreSQL 技术内幕：原理探索》 [1]](/02.关系型数据库/PostgreSQL/99.参考资料/2016-《PostgreSQL%20技术内幕：原理探索》/README.md)
+          - [2.2.5.1.1 1.数据库集簇，数据库，数据表](/02.关系型数据库/PostgreSQL/99.参考资料/2016-《PostgreSQL%20技术内幕：原理探索》/1.数据库集簇，数据库，数据表/README.md)
             
     - [2.3 SQLServer](/02.关系型数据库/SQLServer/README.md)
       
