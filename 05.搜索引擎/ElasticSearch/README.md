@@ -6,21 +6,6 @@ ElasticSearch 是一个基于 [Apache Lucene(TM)](https://lucene.apache.org/core
 - 分布式的实时分析搜索引擎
 - 可以扩展到上百台服务器，处理 PB 级结构化或非结构化数据
 
-# 目录结构
-
-```sh
-home---这是Elasticsearch解压的目录
-　　bin---这里面是ES启动的脚本
-
-　　conf---elasticsearch.yml为ES的配置文件
-
-　　data---这里是ES得当前节点的分片的数据，可以直接拷贝到其他的节点进行使用
-
-　　logs---日志文件
-
-　　plugins---这里存放一些常用的插件，如果有一切额外的插件，可以放在这里使用。
-```
-
 # Links
 
 - 提取其中知识脑图 https://mp.weixin.qq.com/s/pWU-c0hfTi51SPtFT4iFKA
