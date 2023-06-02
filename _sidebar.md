@@ -42,38 +42,41 @@
       - [1.5.3 文档模型](/01.数据库基础/数据模型/文档模型.md)
       - [1.5.4 时序模型](/01.数据库基础/数据模型/时序模型.md)
       - [1.5.5 查询语言](/01.数据库基础/数据模型/查询语言.md)
-  - [2 02.关系型数据库 [4]](/02.关系型数据库/README.md)
-    - [2.1 MySQL](/02.关系型数据库/MySQL/README.md)
+  - [2 02.关系型数据库 [5]](/02.关系型数据库/README.md)
+    - 2.1 99.参考资料 [1]
+      - [2.1.1 数据库内核杂谈 [1]](/02.关系型数据库/99.参考资料/数据库内核杂谈/README.md)
+        - [2.1.1.1 01.实现一个基本功能的数据库](/02.关系型数据库/99.参考资料/数据库内核杂谈/01.实现一个基本功能的数据库.md)
+    - [2.2 MySQL](/02.关系型数据库/MySQL/README.md)
       
-    - [2.2 PostgreSQL [5]](/02.关系型数据库/PostgreSQL/README.md)
-      - [2.2.1 01.部署与配置 [2]](/02.关系型数据库/PostgreSQL/01.部署与配置/README.md)
-        - [2.2.1.1 数据库管理](/02.关系型数据库/PostgreSQL/01.部署与配置/数据库管理.md)
-        - [2.2.1.2 部署与配置](/02.关系型数据库/PostgreSQL/01.部署与配置/部署与配置.md)
-      - [2.2.2 02.数据类型 [1]](/02.关系型数据库/PostgreSQL/02.数据类型/README.md)
-        - [2.2.2.1 时间与日期](/02.关系型数据库/PostgreSQL/02.数据类型/时间与日期.md)
-      - 2.2.3 09.插件 [1]
-        - 2.2.3.1 pgvector [1]
-          - 2.2.3.1.1 99.参考资料 [1]
-            - [2.2.3.1.1.1 AI 大模型与向量数据库 PGVECTOR](/02.关系型数据库/PostgreSQL/09.插件/pgvector/99.参考资料/2023-AI%20大模型与向量数据库%20PGVECTOR.md)
-      - [2.2.4 10.架构机制 [6]](/02.关系型数据库/PostgreSQL/10.架构机制/README.md)
-        - [2.2.4.1 并发控制](/02.关系型数据库/PostgreSQL/10.架构机制/并发控制.md)
-        - [2.2.4.2 持久化与缓冲区管理](/02.关系型数据库/PostgreSQL/10.架构机制/持久化与缓冲区管理.md)
-        - [2.2.4.3 数据库架构](/02.关系型数据库/PostgreSQL/10.架构机制/数据库架构.md)
-        - [2.2.4.4 日志备份与恢复](/02.关系型数据库/PostgreSQL/10.架构机制/日志备份与恢复.md)
-        - [2.2.4.5 查询处理](/02.关系型数据库/PostgreSQL/10.架构机制/查询处理.md)
-        - 2.2.4.6 索引 [1]
-          - 2.2.4.6.1 99.参考资料 [1]
-            - [2.2.4.6.1.1 Understanding database Indexes in PostgreSQL](/02.关系型数据库/PostgreSQL/10.架构机制/索引/99.参考资料/2023-Understanding%20database%20Indexes%20in%20PostgreSQL.md)
-      - 2.2.5 99.参考资料 [1]
-        - [2.2.5.1 《PostgreSQL 技术内幕：原理探索》 [1]](/02.关系型数据库/PostgreSQL/99.参考资料/2016-《PostgreSQL%20技术内幕：原理探索》/README.md)
-          - [2.2.5.1.1 1.数据库集簇，数据库，数据表](/02.关系型数据库/PostgreSQL/99.参考资料/2016-《PostgreSQL%20技术内幕：原理探索》/1.数据库集簇，数据库，数据表/README.md)
+    - [2.3 PostgreSQL [5]](/02.关系型数据库/PostgreSQL/README.md)
+      - [2.3.1 01.部署与配置 [2]](/02.关系型数据库/PostgreSQL/01.部署与配置/README.md)
+        - [2.3.1.1 数据库管理](/02.关系型数据库/PostgreSQL/01.部署与配置/数据库管理.md)
+        - [2.3.1.2 部署与配置](/02.关系型数据库/PostgreSQL/01.部署与配置/部署与配置.md)
+      - [2.3.2 02.数据类型 [1]](/02.关系型数据库/PostgreSQL/02.数据类型/README.md)
+        - [2.3.2.1 时间与日期](/02.关系型数据库/PostgreSQL/02.数据类型/时间与日期.md)
+      - 2.3.3 09.插件 [1]
+        - 2.3.3.1 pgvector [1]
+          - 2.3.3.1.1 99.参考资料 [1]
+            - [2.3.3.1.1.1 AI 大模型与向量数据库 PGVECTOR](/02.关系型数据库/PostgreSQL/09.插件/pgvector/99.参考资料/2023-AI%20大模型与向量数据库%20PGVECTOR.md)
+      - [2.3.4 10.架构机制 [6]](/02.关系型数据库/PostgreSQL/10.架构机制/README.md)
+        - [2.3.4.1 并发控制](/02.关系型数据库/PostgreSQL/10.架构机制/并发控制.md)
+        - [2.3.4.2 持久化与缓冲区管理](/02.关系型数据库/PostgreSQL/10.架构机制/持久化与缓冲区管理.md)
+        - [2.3.4.3 数据库架构](/02.关系型数据库/PostgreSQL/10.架构机制/数据库架构.md)
+        - [2.3.4.4 日志备份与恢复](/02.关系型数据库/PostgreSQL/10.架构机制/日志备份与恢复.md)
+        - [2.3.4.5 查询处理](/02.关系型数据库/PostgreSQL/10.架构机制/查询处理.md)
+        - 2.3.4.6 索引 [1]
+          - 2.3.4.6.1 99.参考资料 [1]
+            - [2.3.4.6.1.1 Understanding database Indexes in PostgreSQL](/02.关系型数据库/PostgreSQL/10.架构机制/索引/99.参考资料/2023-Understanding%20database%20Indexes%20in%20PostgreSQL.md)
+      - 2.3.5 99.参考资料 [1]
+        - [2.3.5.1 《PostgreSQL 技术内幕：原理探索》 [1]](/02.关系型数据库/PostgreSQL/99.参考资料/2016-《PostgreSQL%20技术内幕：原理探索》/README.md)
+          - [2.3.5.1.1 1.数据库集簇，数据库，数据表](/02.关系型数据库/PostgreSQL/99.参考资料/2016-《PostgreSQL%20技术内幕：原理探索》/1.数据库集簇，数据库，数据表/README.md)
             
-    - [2.3 SQLServer](/02.关系型数据库/SQLServer/README.md)
+    - [2.4 SQLServer](/02.关系型数据库/SQLServer/README.md)
       
-    - 2.4 Sqlite [1]
-      - 2.4.1 99.参考资料 [1]
-        - [2.4.1.1 《Lets Build a Simple Database》 [1]](/02.关系型数据库/Sqlite/99.参考资料/2020-《Lets%20Build%20a%20Simple%20Database》/README.md)
-          - [2.4.1.1.1 01.简介和设置 REPL](/02.关系型数据库/Sqlite/99.参考资料/2020-《Lets%20Build%20a%20Simple%20Database》/01.简介和设置%20REPL.md)
+    - 2.5 Sqlite [1]
+      - 2.5.1 99.参考资料 [1]
+        - [2.5.1.1 《Lets Build a Simple Database》 [1]](/02.关系型数据库/Sqlite/99.参考资料/2020-《Lets%20Build%20a%20Simple%20Database》/README.md)
+          - [2.5.1.1.1 01.简介和设置 REPL](/02.关系型数据库/Sqlite/99.参考资料/2020-《Lets%20Build%20a%20Simple%20Database》/01.简介和设置%20REPL.md)
   - 3 03.键值型数据库 [4]
     - [3.1 BoltDB](/03.键值型数据库/BoltDB/README.md)
       
@@ -201,9 +204,4 @@
           - [9.3.3.2.2 存储架构](/10.分布式数据库/TiDB/TiKV/存储/存储架构.md)
     - [9.4 系统设计](/10.分布式数据库/系统设计/README.md)
       
-  - 10 99.参考资料 [2]
-    - [10.1 《MySQL 实战 45 讲》笔记](/99.参考资料/2021-《MySQL%20实战%2045%20讲》笔记/README.md)
-      
-    - [10.2 数据库内核杂谈 [1]](/99.参考资料/数据库内核杂谈/README.md)
-      - [10.2.1 01.实现一个基本功能的数据库](/99.参考资料/数据库内核杂谈/01.实现一个基本功能的数据库.md)
-  - [11 INTRODUCTION](/INTRODUCTION.md)
+  - [10 INTRODUCTION](/INTRODUCTION.md)
