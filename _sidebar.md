@@ -188,9 +188,9 @@
   - 8 08.向量数据库 [2]
     - 8.1 99.参考资料 [1]
       - [8.1.1 What is a Vector Database?](/08.向量数据库/99.参考资料/2023-What%20is%20a%20Vector%20Database?.md)
-    - 8.2 Mulvis [1]
+    - [8.2 Milvus [1]](/08.向量数据库/Milvus/README.md)
       - 8.2.1 99.参考资料 [1]
-        - [8.2.1.1 云原生向量数据库 Milvus 介绍](/08.向量数据库/Mulvis/99.参考资料/2022-云原生向量数据库%20Milvus%20介绍.md)
+        - [8.2.1.1 云原生向量数据库 Milvus 介绍](/08.向量数据库/Milvus/99.参考资料/2022-云原生向量数据库%20Milvus%20介绍.md)
   - [9 10.分布式数据库 [4]](/10.分布式数据库/README.md)
     - [9.1 Aurora](/10.分布式数据库/Aurora/README.md)
       
