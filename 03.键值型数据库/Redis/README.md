@@ -1,6 +1,12 @@
 # Redis
 
-![Redis 非阻塞与多线程模型对比](https://s2.ax1x.com/2019/11/25/MvR524.png)
+![Why is Redis so fast?](https://assets.ng-tech.icu/item/20230622211042.png)
+
+- Redis 是一个基于 RAM 的数据库。RAM 访问比随机磁盘访问至少快 1000 倍。
+
+- Redis 利用 IO 复用和单线程执行循环来提高执行效率。
+
+- Redis 利用了几个高效的底层数据结构。
 
 # Links
 
