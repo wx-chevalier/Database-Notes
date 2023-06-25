@@ -35,7 +35,7 @@ RDB 文件默认保存在 Redis 的工作目录下，默认文件名为 `dump.rd
 
 **2. 压缩算法**
 
-Redis 默认采用 LZF 算法对生成的 RDB 文件做压缩处理， 这样可以减少占用空间和网络传输的数据量，但是压缩过程会耗费 CPU 的计算资源， 你可以按照实际情况，选择是否启用。可以通过修改 `redis.conf` 中的 `rdbcompression` 配置或使用以下命令来进行动态修改：
+Redis 默认采用 LZF 算法对生成的 RDB 文件做压缩处理，这样可以减少占用空间和网络传输的数据量，但是压缩过程会耗费 CPU 的计算资源，你可以按照实际情况，选择是否启用。可以通过修改 `redis.conf` 中的 `rdbcompression` 配置或使用以下命令来进行动态修改：
 
 ```shell
 config set rdbcompression{yes|no}

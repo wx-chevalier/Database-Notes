@@ -114,7 +114,7 @@ def query(question, limit=64):
 为了对 pgvector 的性能表现在直觉上有一个把握，在 M1 Max 芯片 Macbook 下单核运行一些简单的测试：从 1 百万条随机 1536 维向量（正好是 OpenAI 的输出向量维度）中找出余弦距离最近的 TOP 1 ～ 50 条向量，每次耗时大约 8ms 。从 1 亿条随机 128 维向量 （SIFT 图像数据集的维度）中找出 L2 欧几里得距离 TOP 1 向量耗时 5ms，TOP 100 耗时也只要 21ms 。
 
 ```sql
--- 1M 个 1536 维向量，随机取 TOP1～50，余弦距离， 单核：插入与索引耗时均为5～6分钟，大小8GB左右。随机向量最近邻 Top1 召回：8ms
+-- 1M 个 1536 维向量，随机取 TOP1～50，余弦距离，单核：插入与索引耗时均为5～6分钟，大小8GB左右。随机向量最近邻 Top1 召回：8ms
 
 DROP TABLE IF EXISTS vtest; CREATE TABLE vtest ( id BIGINT, v  VECTOR(1536) ); TRUNCATE vtest;
 
@@ -124,7 +124,7 @@ CREATE INDEX ON vtest USING ivfflat (v vector_cosine_ops) WITH(lists = 1000);
 
 WITH probe AS (SELECT random_array(1536)::VECTOR(1536) AS v) SELECT id FROM vtest ORDER BY v <=> (SELECT v FROM probe) limit 1;
 
--- 简易SIFT ，1亿个128维向量，测试L2距离，召回1个最近向量， 5 ms， 召回最近100个向量：21ms
+-- 简易SIFT ，1亿个128维向量，测试L2距离，召回1个最近向量，5 ms，召回最近100个向量：21ms
 
 DROP TABLE IF EXISTS vtest; CREATE TABLE vtest( id BIGINT, v  VECTOR(128) ); TRUNCATE vtest;
 
@@ -173,6 +173,6 @@ INSERT INTO items (vec) VALUES ('[1,1]'), ('[-2,-2]'), ('[-3,4]');
 SELECT *, vec <=> '[0,1]' AS d FROM items ORDER BY 2 LIMIT 3;
 ```
 
-更简单的选择是本地优先的开源 RDS PostgreSQL 替代 —— Pigsty ，在三月底发布的 v2.0.2 中， pgvector 已经默认启用，开箱即用。您可以在一台全新虚拟机上一键完成安装，自带时序地理空间向量插件，监控备份高可用齐全。分文不收，立等可取。
+更简单的选择是本地优先的开源 RDS PostgreSQL 替代 —— Pigsty ，在三月底发布的 v2.0.2 中，pgvector 已经默认启用，开箱即用。您可以在一台全新虚拟机上一键完成安装，自带时序地理空间向量插件，监控备份高可用齐全。分文不收，立等可取。
 
 ![性能扩展](https://assets.ng-tech.icu/item/20230521171212.png)
