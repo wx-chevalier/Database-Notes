@@ -45,7 +45,7 @@ The main building blocks, which we'll cover via examples, are:
 - The match operator `@@` to check if a `tsquery` matches a `tsvector`
   用于检查 a `tsquery` 是否匹配的 `tsvector` 匹配运算符 `@@`
 - Functions to rank each match (`ts_rank`, `ts_rank_cd`)
-  对每个匹配项进行排名的函数 （ `ts_rank` ， `ts_rank_cd` ）
+  对每个匹配项进行排名的函数 （ `ts_rank` ，`ts_rank_cd` ）
 - The GIN index type, an inverted index to efficiently query `tsvector`
   GIN 索引类型，用于高效查询 `tsvector` 的倒排索引
 
@@ -76,7 +76,7 @@ As you can see, stop words like “I”, “to” or “an” are removed, becau
 如您所见，删除了诸如“I”，“to”或“an”之类的停用词，因为它们太常见而无法用于搜索。这些词被规范化并简化为词根（例如，“拒绝”和“拒绝”都转换为“拒绝”）。标点符号将被忽略。对于每个单词，记录原始短语中的位置（例如，“refus”是文本中的第 12 个和第 13 个单词）和权重（这对排名很有用，我们将在后面讨论）。
 
 In the example above, the transformation rules from words to _lexemes_ are based on the `english` search configuration. Running the same query with the `simple` search configuration results in a `tsvector` that includes all the words as they were found in the text:
-在上面的示例中，从单词到词素的转换规则基于 `english` 搜索配置。使用 `simple` 搜索配置运行相同的查询会产生 ， `tsvector` 其中包含在文本中找到的所有单词：
+在上面的示例中，从单词到词素的转换规则基于 `english` 搜索配置。使用 `simple` 搜索配置运行相同的查询会产生 ，`tsvector` 其中包含在文本中找到的所有单词：
 
 ```
 SELECT * FROM unnest(to_tsvector('simple',
@@ -119,7 +119,7 @@ Notably, however, there is no configuration for CJK (Chinese-Japanese-Korean), w
 [#tsquery 查询](https://xata.io/blog/postgres-full-text-search-engine#tsquery)
 
 The `tsquery` data type is used to represent a normalized query. A `tsquery` contains search terms, which must be already-normalized lexemes, and may combine multiple terms using AND, OR, NOT, and FOLLOWED BY operators. There are functions like `to_tsquery`, `plainto_tsquery`, and `websearch_to_tsquery` that are helpful in converting user-written text into a proper `tsquery`, primarily by normalizing words appearing in the text.
-数据类型 `tsquery` 用于表示规范化查询。A `tsquery` 包含搜索词，这些词必须是已经规范化的词素，并且可以使用 AND、OR、NOT 和后跟运算符组合多个词。有一些函数，如 ， 和 `websearch_to_tsquery` 有助于将用户编写的文本转换为适当的 `tsquery` 文本 `to_tsquery` ， `plainto_tsquery` 主要是通过规范化文本中出现的单词。
+数据类型 `tsquery` 用于表示规范化查询。A `tsquery` 包含搜索词，这些词必须是已经规范化的词素，并且可以使用 AND、OR、NOT 和后跟运算符组合多个词。有一些函数，如 ，和 `websearch_to_tsquery` 有助于将用户编写的文本转换为适当的 `tsquery` 文本 `to_tsquery` ，`plainto_tsquery` 主要是通过规范化文本中出现的单词。
 
 To get a feeling of `tsquery`, let's see a few examples using `websearch_to_tsquery`:
 为了获得一种 `tsquery` 感觉，让我们看几个使用 `websearch_to_tsquery` 的例子：
@@ -256,7 +256,7 @@ Taking it directly from the [docs](https://www.postgresql.org/docs/current/texts
 > PostgreSQL 提供了两个预定义的排名函数，它们考虑了词汇、邻近和结构信息;也就是说，它们考虑查询词在文档中出现的频率、这些词在文档中的接近程度以及它们出现的文档部分的重要性。但是，相关性的概念是模糊的，并且非常特定于应用程序。不同的应用程序可能需要额外的排名信息，例如文档修改时间。内置排名函数只是示例。您可以编写自己的排名函数和/或将其结果与其他因素相结合，以满足您的特定需求。
 
 The two ranking functions mentioned are `ts_rank` and `ts_rank_cd`. The difference between them is that while they both take into account the frequency of the term, `ts_rank_cd` also takes into account the proximity of matching lexemes to each other.
-提到的两个排名函数是 `ts_rank` 和 `ts_rank_cd` 。它们之间的区别在于，虽然它们都考虑了项的频率， `ts_rank_cd` 但也考虑了匹配词素彼此之间的接近程度。
+提到的两个排名函数是 `ts_rank` 和 `ts_rank_cd` 。它们之间的区别在于，虽然它们都考虑了项的频率，`ts_rank_cd` 但也考虑了匹配词素彼此之间的接近程度。
 
 To use them in a query, you can do something like this:
 若要在查询中使用它们，可以执行以下操作：
