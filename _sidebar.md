@@ -14,13 +14,13 @@
       - [1.3.3 03.NoSQL](/01.数据库基础/数据库简史/03.NoSQL.md)
       - [1.3.4 04.数据库选择](/01.数据库基础/数据库简史/04.数据库选择.md)
   - [2 02.关系型数据库 [6]](/02.关系型数据库/README.md)
-    - [2.1 00.RDB 基础](/02.关系型数据库/00.RDB%20基础/README.md)
+    - [2.1 00~RDB 基础](/02.关系型数据库/00~RDB%20基础/README.md)
       
-    - 2.2 99.参考资料 [2]
-      - [2.2.1 CMU 15 445|645 学习笔记](/02.关系型数据库/99.参考资料/CMU%2015-445|645%20学习笔记/README.md)
+    - 2.2 99~参考资料 [2]
+      - [2.2.1 CMU 15 445|645 学习笔记](/02.关系型数据库/99~参考资料/CMU%2015-445|645%20学习笔记/README.md)
         
-      - [2.2.2 数据库内核杂谈 [1]](/02.关系型数据库/99.参考资料/数据库内核杂谈/README.md)
-        - [2.2.2.1 01.实现一个基本功能的数据库](/02.关系型数据库/99.参考资料/数据库内核杂谈/01.实现一个基本功能的数据库.md)
+      - [2.2.2 数据库内核杂谈 [1]](/02.关系型数据库/99~参考资料/数据库内核杂谈/README.md)
+        - [2.2.2.1 01.实现一个基本功能的数据库](/02.关系型数据库/99~参考资料/数据库内核杂谈/01.实现一个基本功能的数据库.md)
     - [2.3 MySQL](/02.关系型数据库/MySQL/README.md)
       
     - [2.4 PostgreSQL [6]](/02.关系型数据库/PostgreSQL/README.md)
@@ -31,12 +31,12 @@
         - [2.4.2.1 时间与日期](/02.关系型数据库/PostgreSQL/02.数据类型/时间与日期.md)
       - 2.4.3 03.应用模式 [1]
         - 2.4.3.1 全文搜索引擎 [1]
-          - 2.4.3.1.1 99.参考资料 [1]
-            - [2.4.3.1.1.1 Create an advanced search engine with PostgreSQL](/02.关系型数据库/PostgreSQL/03.应用模式/全文搜索引擎/99.参考资料/2023-Create%20an%20advanced%20search%20engine%20with%20PostgreSQL.md)
+          - 2.4.3.1.1 99~参考资料 [1]
+            - [2.4.3.1.1.1 Create an advanced search engine with PostgreSQL](/02.关系型数据库/PostgreSQL/03.应用模式/全文搜索引擎/99~参考资料/2023-Create%20an%20advanced%20search%20engine%20with%20PostgreSQL.md)
       - 2.4.4 09.插件 [1]
         - 2.4.4.1 pgvector [1]
-          - 2.4.4.1.1 99.参考资料 [1]
-            - [2.4.4.1.1.1 AI 大模型与向量数据库 PGVECTOR](/02.关系型数据库/PostgreSQL/09.插件/pgvector/99.参考资料/2023-AI%20大模型与向量数据库%20PGVECTOR.md)
+          - 2.4.4.1.1 99~参考资料 [1]
+            - [2.4.4.1.1.1 AI 大模型与向量数据库 PGVECTOR](/02.关系型数据库/PostgreSQL/09.插件/pgvector/99~参考资料/2023-AI%20大模型与向量数据库%20PGVECTOR.md)
       - [2.4.5 10.架构机制 [6]](/02.关系型数据库/PostgreSQL/10.架构机制/README.md)
         - [2.4.5.1 并发控制](/02.关系型数据库/PostgreSQL/10.架构机制/并发控制.md)
         - [2.4.5.2 持久化与缓冲区管理](/02.关系型数据库/PostgreSQL/10.架构机制/持久化与缓冲区管理.md)
@@ -44,18 +44,18 @@
         - [2.4.5.4 日志备份与恢复](/02.关系型数据库/PostgreSQL/10.架构机制/日志备份与恢复.md)
         - [2.4.5.5 查询处理](/02.关系型数据库/PostgreSQL/10.架构机制/查询处理.md)
         - 2.4.5.6 索引 [1]
-          - 2.4.5.6.1 99.参考资料 [1]
-            - [2.4.5.6.1.1 Understanding database Indexes in PostgreSQL](/02.关系型数据库/PostgreSQL/10.架构机制/索引/99.参考资料/2023-Understanding%20database%20Indexes%20in%20PostgreSQL.md)
-      - 2.4.6 99.参考资料 [1]
-        - [2.4.6.1 《PostgreSQL 技术内幕：原理探索》 [1]](/02.关系型数据库/PostgreSQL/99.参考资料/2016-《PostgreSQL%20技术内幕：原理探索》/README.md)
-          - [2.4.6.1.1 1.数据库集簇，数据库，数据表](/02.关系型数据库/PostgreSQL/99.参考资料/2016-《PostgreSQL%20技术内幕：原理探索》/1.数据库集簇，数据库，数据表/README.md)
+          - 2.4.5.6.1 99~参考资料 [1]
+            - [2.4.5.6.1.1 Understanding database Indexes in PostgreSQL](/02.关系型数据库/PostgreSQL/10.架构机制/索引/99~参考资料/2023-Understanding%20database%20Indexes%20in%20PostgreSQL.md)
+      - 2.4.6 99~参考资料 [1]
+        - [2.4.6.1 《PostgreSQL 技术内幕：原理探索》 [1]](/02.关系型数据库/PostgreSQL/99~参考资料/2016-《PostgreSQL%20技术内幕：原理探索》/README.md)
+          - [2.4.6.1.1 1.数据库集簇，数据库，数据表](/02.关系型数据库/PostgreSQL/99~参考资料/2016-《PostgreSQL%20技术内幕：原理探索》/1.数据库集簇，数据库，数据表/README.md)
             
     - [2.5 SQLServer](/02.关系型数据库/SQLServer/README.md)
       
     - 2.6 Sqlite [1]
-      - 2.6.1 99.参考资料 [1]
-        - [2.6.1.1 《Lets Build a Simple Database》 [1]](/02.关系型数据库/Sqlite/99.参考资料/2020-《Lets%20Build%20a%20Simple%20Database》/README.md)
-          - [2.6.1.1.1 01.简介和设置 REPL](/02.关系型数据库/Sqlite/99.参考资料/2020-《Lets%20Build%20a%20Simple%20Database》/01.简介和设置%20REPL.md)
+      - 2.6.1 99~参考资料 [1]
+        - [2.6.1.1 《Lets Build a Simple Database》 [1]](/02.关系型数据库/Sqlite/99~参考资料/2020-《Lets%20Build%20a%20Simple%20Database》/README.md)
+          - [2.6.1.1.1 01.简介和设置 REPL](/02.关系型数据库/Sqlite/99~参考资料/2020-《Lets%20Build%20a%20Simple%20Database》/01.简介和设置%20REPL.md)
   - 3 03.键值型数据库 [4]
     - [3.1 BoltDB](/03.键值型数据库/BoltDB/README.md)
       
@@ -104,8 +104,8 @@
   - [5 05.搜索引擎 [2]](/05.搜索引擎/README.md)
     - [5.1 ElasticSearch [4]](/05.搜索引擎/ElasticSearch/README.md)
       - 5.1.1 01.基本操作 [3]
-        - 5.1.1.1 99.参考资料 [1]
-          - [5.1.1.1.1 全文搜索引擎 Elasticsearch 入门教程](/05.搜索引擎/ElasticSearch/01.基本操作/99.参考资料/2017-全文搜索引擎%20Elasticsearch%20入门教程.md)
+        - 5.1.1.1 99~参考资料 [1]
+          - [5.1.1.1.1 全文搜索引擎 Elasticsearch 入门教程](/05.搜索引擎/ElasticSearch/01.基本操作/99~参考资料/2017-全文搜索引擎%20Elasticsearch%20入门教程.md)
         - [5.1.1.2 数据检索](/05.搜索引擎/ElasticSearch/01.基本操作/数据检索.md)
         - [5.1.1.3 索引操作](/05.搜索引擎/ElasticSearch/01.基本操作/索引操作.md)
       - 5.1.2 02.SDK 使用 [1]
@@ -163,19 +163,19 @@
     - 7.3 系统设计 [1]
       - [7.3.1 图数据库案例](/07.图数据库/系统设计/图数据库案例.md)
   - 8 08.向量数据库 [2]
-    - 8.1 99.参考资料 [1]
-      - [8.1.1 What is a Vector Database?](/08.向量数据库/99.参考资料/2023-What%20is%20a%20Vector%20Database?.md)
+    - 8.1 99~参考资料 [1]
+      - [8.1.1 What is a Vector Database?](/08.向量数据库/99~参考资料/2023-What%20is%20a%20Vector%20Database?.md)
     - [8.2 Milvus [1]](/08.向量数据库/Milvus/README.md)
-      - 8.2.1 99.参考资料 [1]
-        - [8.2.1.1 云原生向量数据库 Milvus 介绍](/08.向量数据库/Milvus/99.参考资料/2022-云原生向量数据库%20Milvus%20介绍.md)
+      - 8.2.1 99~参考资料 [1]
+        - [8.2.1.1 云原生向量数据库 Milvus 介绍](/08.向量数据库/Milvus/99~参考资料/2022-云原生向量数据库%20Milvus%20介绍.md)
   - [9 10.分布式数据库 [4]](/10.分布式数据库/README.md)
     - [9.1 Aurora](/10.分布式数据库/Aurora/README.md)
       
     - [9.2 F1](/10.分布式数据库/F1/README.md)
       
     - [9.3 TiDB [3]](/10.分布式数据库/TiDB/README.md)
-      - 9.3.1 99.参考资料 [1]
-        - [9.3.1.1 三篇文章了解 TiDB 技术内幕](/10.分布式数据库/TiDB/99.参考资料/2017-三篇文章了解%20TiDB%20技术内幕.md)
+      - 9.3.1 99~参考资料 [1]
+        - [9.3.1.1 三篇文章了解 TiDB 技术内幕](/10.分布式数据库/TiDB/99~参考资料/2017-三篇文章了解%20TiDB%20技术内幕.md)
       - [9.3.2 TiFlash](/10.分布式数据库/TiDB/TiFlash/README.md)
         
       - 9.3.3 TiKV [2]
