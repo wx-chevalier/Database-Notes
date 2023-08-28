@@ -88,8 +88,8 @@
         - [3.3.4.3 多进程架构](/03.键值型数据库/Redis/04.架构机制/多进程架构.md)
         - [3.3.4.4 客户端通信](/03.键值型数据库/Redis/04.架构机制/客户端通信.md)
         - [3.3.4.5 深入事件循环](/03.键值型数据库/Redis/04.架构机制/深入事件循环.md)
-      - [3.3.5 05.KeyDB [1]](/03.键值型数据库/Redis/05.KeyDB/README.md)
-        - [3.3.5.1 架构机制](/03.键值型数据库/Redis/05.KeyDB/架构机制.md)
+      - [3.3.5 05~KeyDB [1]](/03.键值型数据库/Redis/05~KeyDB/README.md)
+        - [3.3.5.1 架构机制](/03.键值型数据库/Redis/05~KeyDB/架构机制.md)
       - 3.3.6 06.从零实现 KV 数据库 [1]
         - [3.3.6.1 基于哈希索引的 KV 数据库](/03.键值型数据库/Redis/06.从零实现%20KV%20数据库/基于哈希索引的%20KV%20数据库.md)
     - 3.4 RocksDB [1]
@@ -101,20 +101,20 @@
       - [4.1.3 03.聚合](/04.文档型数据库/1.Mongodb/03.聚合.md)
       - [4.1.4 04.复制](/04.文档型数据库/1.Mongodb/04.复制.md)
       - [4.1.5 05.分片](/04.文档型数据库/1.Mongodb/05.分片.md)
-  - [5 05.搜索引擎 [2]](/05.搜索引擎/README.md)
-    - [5.1 ElasticSearch [4]](/05.搜索引擎/ElasticSearch/README.md)
+  - [5 05~搜索引擎 [2]](/05~搜索引擎/README.md)
+    - [5.1 ElasticSearch [4]](/05~搜索引擎/ElasticSearch/README.md)
       - 5.1.1 01.基本操作 [3]
         - 5.1.1.1 99~参考资料 [1]
-          - [5.1.1.1.1 全文搜索引擎 Elasticsearch 入门教程](/05.搜索引擎/ElasticSearch/01.基本操作/99~参考资料/2017-全文搜索引擎%20Elasticsearch%20入门教程.md)
-        - [5.1.1.2 数据检索](/05.搜索引擎/ElasticSearch/01.基本操作/数据检索.md)
-        - [5.1.1.3 索引操作](/05.搜索引擎/ElasticSearch/01.基本操作/索引操作.md)
+          - [5.1.1.1.1 全文搜索引擎 Elasticsearch 入门教程](/05~搜索引擎/ElasticSearch/01.基本操作/99~参考资料/2017-全文搜索引擎%20Elasticsearch%20入门教程.md)
+        - [5.1.1.2 数据检索](/05~搜索引擎/ElasticSearch/01.基本操作/数据检索.md)
+        - [5.1.1.3 索引操作](/05~搜索引擎/ElasticSearch/01.基本操作/索引操作.md)
       - 5.1.2 02.SDK 使用 [1]
-        - [5.1.2.1 Java](/05.搜索引擎/ElasticSearch/02.SDK%20使用/Java.md)
-      - [5.1.3 架构原理](/05.搜索引擎/ElasticSearch/架构原理/README.md)
+        - [5.1.2.1 Java](/05~搜索引擎/ElasticSearch/02.SDK%20使用/Java.md)
+      - [5.1.3 架构原理](/05~搜索引擎/ElasticSearch/架构原理/README.md)
         
-      - [5.1.4 集群与高可用](/05.搜索引擎/ElasticSearch/集群与高可用/README.md)
+      - [5.1.4 集群与高可用](/05~搜索引擎/ElasticSearch/集群与高可用/README.md)
         
-    - [5.2 MeiliSearch](/05.搜索引擎/MeiliSearch/README.md)
+    - [5.2 MeiliSearch](/05~搜索引擎/MeiliSearch/README.md)
       
   - [6 06.时序数据库 [7]](/06.时序数据库/README.md)
     - [6.1 AliyunTSDB](/06.时序数据库/AliyunTSDB/README.md)
