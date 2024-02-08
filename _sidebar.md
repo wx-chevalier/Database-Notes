@@ -104,21 +104,24 @@
       - [4.1.3 03.聚合](/04~文档型数据库/1.Mongodb/03.聚合.md)
       - [4.1.4 04.复制](/04~文档型数据库/1.Mongodb/04.复制.md)
       - [4.1.5 05.分片](/04~文档型数据库/1.Mongodb/05.分片.md)
-  - [5 05~搜索引擎 [2]](/05~搜索引擎/README.md)
+  - [5 05~搜索引擎 [3]](/05~搜索引擎/README.md)
     - [5.1 ElasticSearch [4]](/05~搜索引擎/ElasticSearch/README.md)
-      - 5.1.1 01.基本操作 [3]
+      - 5.1.1 01~基本操作 [3]
         - 5.1.1.1 99~参考资料 [1]
-          - [5.1.1.1.1 全文搜索引擎 Elasticsearch 入门教程](/05~搜索引擎/ElasticSearch/01.基本操作/99~参考资料/2017-全文搜索引擎%20Elasticsearch%20入门教程.md)
-        - [5.1.1.2 数据检索](/05~搜索引擎/ElasticSearch/01.基本操作/数据检索.md)
-        - [5.1.1.3 索引操作](/05~搜索引擎/ElasticSearch/01.基本操作/索引操作.md)
-      - 5.1.2 02.SDK 使用 [1]
-        - [5.1.2.1 Java](/05~搜索引擎/ElasticSearch/02.SDK%20使用/Java.md)
+          - [5.1.1.1.1 全文搜索引擎 Elasticsearch 入门教程](/05~搜索引擎/ElasticSearch/01~基本操作/99~参考资料/2017-全文搜索引擎%20Elasticsearch%20入门教程.md)
+        - [5.1.1.2 数据检索](/05~搜索引擎/ElasticSearch/01~基本操作/数据检索.md)
+        - [5.1.1.3 索引操作](/05~搜索引擎/ElasticSearch/01~基本操作/索引操作.md)
+      - 5.1.2 02~SDK 使用 [1]
+        - [5.1.2.1 Java](/05~搜索引擎/ElasticSearch/02~SDK%20使用/Java.md)
       - [5.1.3 架构原理](/05~搜索引擎/ElasticSearch/架构原理/README.md)
         
       - [5.1.4 集群与高可用](/05~搜索引擎/ElasticSearch/集群与高可用/README.md)
         
     - [5.2 MeiliSearch](/05~搜索引擎/MeiliSearch/README.md)
       
+    - 5.3 搜索引擎原理 [1]
+      - 5.3.1 99~参考资料 [1]
+        - [5.3.1.1 2024~A search engine in 80 lines of Python](/05~搜索引擎/搜索引擎原理/99~参考资料/2024~A%20search%20engine%20in%2080%20lines%20of%20Python.md)
   - [6 06~时序数据库 [7]](/06~时序数据库/README.md)
     - [6.1 AliyunTSDB](/06~时序数据库/AliyunTSDB/README.md)
       
