@@ -1,6 +1,6 @@
 # Redis
 
-![Why is Redis so fast?](https://assets.ng-tech.icu/item/20230622211042.png)
+![Why is Redis so fast?](https://ngte-superbed.oss-cn-beijing.aliyuncs.com/item/20230622211042.png)
 
 - Redis 是一个基于 RAM 的数据库。RAM 访问比随机磁盘访问至少快 1000 倍。
 

@@ -4,7 +4,7 @@
 
 典型的图结构由点，边和点边对应属性构成。图数据库则是针对图这种结构的独有特点⽽而专⻔门设计的⼀一种数据库，⾮非常适合⾼高度互连数据集的存储和查询。示例例中描述的是⼀一个极度简化的社交关系图，圆圈代表顶点(Vertex/Node), 有⽅方向的线条代表边(Edge)，顶点或者边都可以有属性(Property)。
 
-![](https://assets.ng-tech.icu/item/20230424144345.png)
+![](https://ngte-superbed.oss-cn-beijing.aliyuncs.com/item/20230424144345.png)
 
 # 应用场景
 

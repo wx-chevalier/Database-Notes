@@ -6,7 +6,7 @@ Prometheus 是一套开源的监控、报警、时间序列数据库的组合，
 
 Prometheus 的优势在于其易于安装使用，外部依赖较少；并且直接按照分布式、微服务架构模式进行设计，支持服务自动化发现与代码集成。Prometheus 能够自定义多维度的数据模型，内置强大的查询语句，搭配其丰富的社区扩展，能够轻松实现数据可视化。而随着容器、云计算、云原生的发展，目前 Prometheus 已经广泛用于 Kubernetes 集群的监控系统中。2015 年 7 月，隶属于 Linux 基金会的 云原生计算基金会（CNCF，Cloud Native Computing Foundation）应运而生。第一个加入 CNCF 的项目是 Google 的 Kubernetes，而 Prometheus 是第二个加入的（2016 年）。
 
-![Prometheus 生态系统](https://assets.ng-tech.icu/item/20230424144329.png)
+![Prometheus 生态系统](https://ngte-superbed.oss-cn-beijing.aliyuncs.com/item/20230424144329.png)
 
 上图左侧是各种符合 Prometheus 数据格式的 exporter，除此之外为了支持推动数据类型的 Agent，可以通过 Pushgateway 组件，将 Push 转化为 Pull。Prometheus 甚至可以从其它的 Prometheus 获取数据，组建联邦集群。
 
