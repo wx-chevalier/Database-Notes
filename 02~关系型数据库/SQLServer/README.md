@@ -30,7 +30,7 @@ WITH (
     Customer varchar(200),
     Quantity int
 ) AS OrdersArray
-```sql
+```
 微软宣称，在 PostgrSQL 中实现同样的功能需要综合使用 json_each、json_object_keys、json_populate_record 和 json_populate_recordset 函数。
 
 **JSON 存储**

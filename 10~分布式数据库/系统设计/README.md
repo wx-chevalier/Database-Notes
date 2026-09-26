@@ -57,12 +57,12 @@ Put(key, value)
 ConditionalPut(key, value, exp)
 Scan(startKey, endKey)
 Del(key)
-```sql
+```
 我们讨论的是 OLTP 类分布式数据库都是行存。我们以 CockroachDB 举例，一个表通常包含行和列，可以将一个表转换成如下结构：
 
 ```sh
 /<table>/<index>/<key>/<column> -> Value
-```sql
+```
 为了可读性使用斜杠来分割字段。`/<index>/<key>/` 这部分表示需要每个表必须有一个主键。这样看不大直观，举个例子，对于以下建表语句：
 
 ```sql
@@ -71,7 +71,7 @@ CREATE TABLE test (
     name    VARCHAR,
     price   FLOAT,
 );
-```sql
+```
 转换成 KV 存储如图所示：
 
 ![关系型转化为 KV 存储](https://ngte-superbed.oss-cn-beijing.aliyuncs.com/superbed/2021/08/09/6110cdf05132923bf8abac4e.jpg)
@@ -80,7 +80,7 @@ CREATE TABLE test (
 
 ```sh
 /<table>/<index>/<key> -> Value
-```sql
+```
 ![索引键值映射](https://ngte-superbed.oss-cn-beijing.aliyuncs.com/superbed/2021/08/09/6110ce195132923bf8ac1933.jpg)
 
 非唯一索引和主键类似，只不过其值为空。如图所示：

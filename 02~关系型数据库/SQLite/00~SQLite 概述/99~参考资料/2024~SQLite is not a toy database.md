@@ -19,7 +19,7 @@ The console is a killer SQLite feature for data analysis: more powerful than Exc
 .import --csv city.csv city
 select count(*) from city;
 -- 1117
-```sql
+```
 The console supports basic SQL features and shows query results in a nice ASCII-drawn table. Advanced SQL features are also supported, but more on that later.
 
 ```sql
@@ -39,7 +39,7 @@ order by century desc;
 │ 17 century │ 137        │
 │ ...        │ ...        │
 └────────────┴────────────┘
-```sql
+```
 Data could be exported as SQL, CSV, JSON, even Markdown and HTML. Takes just a couple of commands:
 
 ```sql
@@ -59,7 +59,7 @@ select city, foundation_year, timezone from city limit 10;
     { "city": "Tallinn", "foundation_year": 1219, "timezone": "UTC+2" },
     { "city": "Zagreb", "foundation_year": 1094, "timezone": "UTC+1" }
 ]
-```sql
+```
 If you are more of a BI than a console person - popular data exploration tools like [Metabase](https://www.metabase.com/) or [Superset](https://superset.apache.org/) support SQLite.
 
 ## Native JSON
@@ -88,7 +88,7 @@ from
 │ SOS  │ 706 │ Somali Shilling │ shilling │
 │ USD  │ 840 │ US Dollar       │ dollar   │
 └──────┴─────┴─────────────────┴──────────┘
-```sql
+```
 Doesn't matter how deep the JSON is - you can extract any nested object:
 
 ```sql
@@ -112,7 +112,7 @@ where
 │ 43.646 │ Insurance            │
 │ 43.647 │ Bank                 │
 └────────┴──────────────────────┘
-```sql
+```
 ## CTEs and set operations
 
 Of course, SQLite supports [Common Table Expressions](https://antonz.org/cte/) (`WITH` clause) and [joins](https://antonz.org/sql-join/), I won't even give examples here. If the data is hierarchical (the table refers to itself through a column like `parent_id`) - `WITH RECURSIVE` will come in handy. Any hierarchy, no matter how deep, can be 'unrolled' with a single query.
@@ -145,7 +145,7 @@ select * from tmp;
 │ 3039 │ US, Washington, Kent     │ 3     │
 │ ...  │ ...                      │ ...   │
 └──────┴──────────────────────────┴───────┘
-```sql
+```
 Sets? No problem: `UNION`, `INTERSECT`, `EXCEPT` are at your service.
 
 ```sql
@@ -158,7 +158,7 @@ except
 select employer_id
 from employer_area
 where area_id = 2;
-```sql
+```
 Calculate one column based on several others? Enter [generated columns](https://antonz.org/generated-columns/):
 
 ```sql
@@ -170,7 +170,7 @@ add column salary_net integer as (
     salary_from
   end
 );
-```sql
+```
 Generated columns can be queried in the same way as 'normal' ones:
 
 ```sql
@@ -182,7 +182,7 @@ where
   salary_currency = 'JPY'
   and salary_net is not null
 limit 10;
-```sql
+```
 ## Math statistics
 
 Descriptive statistics? Easy: mean, median, percentiles, standard deviation, you name it. You'll have to load an extension, but it's also a single command (and a single file).
@@ -204,7 +204,7 @@ from books;
 ├────────────┼──────┼────────┼──────┼─────┼─────┼──────┤
 │ 1483       │ 349  │ 295    │ 256  │ 640 │ 817 │ 1199 │
 └────────────┴──────┴────────┴──────┴─────┴─────┴──────┘
-```sql
+```
 > **Note on extensions**. SQLite is missing a lot of functions compared to other DBMSs like PostgreSQL. But they are easy to add, which is what people do - so it turns out quite a mess.
 >
 > Therefore, I decided to make a consistent set of extensions, divided by domain area and compiled for major operating systems. Check it out:
@@ -248,7 +248,7 @@ order by slot;
 │ 11   │ 12         │ *                              │
 │ 12   │ 2          │ *                              │
 └──────┴────────────┴────────────────────────────────┘
-```sql
+```
 ## Performance
 
 SQLite works with hundreds of millions of records just fine. Regular `INSERT`s show about 240K records per second on my laptop. And if you connect the CSV file as a virtual table (there is an extension for that) - inserts become 2 times faster.
@@ -269,7 +269,7 @@ insert into blocks select * from blocks_csv;
 select count(*) from blocks;
 -- 3386629
 -- Run Time: real 0.095 user 0.021972 sys 0.063716
-```sql
+```
 There is a popular opinion among developers that SQLite is not suitable for the web, because it doesn't support concurrent access. This is a myth. In the write-ahead log mode (available since long ago), there can be as many concurrent readers as you want. There can be only one concurrent writer, but often one is enough.
 
 SQLite is a perfect fit for small websites and applications. [sqlite.org](https://sqlite.org/) uses SQLite as a database, not bothering with optimization (≈200 requests per page). It handles 700K visits per month and serves pages faster than 95% of websites I've seen.
@@ -295,7 +295,7 @@ select name from currency where code = 'EUR';
 
 QUERY PLAN
 `--SEARCH TABLE currency USING INDEX currency_code_idx (code=?)
-```sql
+```
 > **Note**. You can also use SQLite as a graph database. A bunch of complex `WITH RECURSIVE` will do the trick, or maybe you'll prefer to add a bit of Python:
 >
 > [simple-graph](https://github.com/dpapathanasiou/simple-graph)
@@ -325,14 +325,14 @@ limit 5;
 │ Daniel Defoe        │ Robinson Crusoe                │ Ann Arbor  │
 │ Ann Thwaite         │ Waiting for the Party: The Lif │ David R. G │
 └─────────────────────┴────────────────────────────────┴────────────┘
-```sql
+```
 Maybe you need an in-memory database for intermediate computations? Single line of python code:
 
 ```python
 db = sqlite3.connect(":memory:")
-```sql
+```
 You can even access it from multiple connections:
 
 ```python
 db = sqlite3.connect("file::memory:?cache=shared")
-```sql
+```

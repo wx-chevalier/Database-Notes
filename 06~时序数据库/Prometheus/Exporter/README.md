@@ -7,7 +7,7 @@ mysqld_exporter 是 Prometheus 官方提供的一个 exporter，我们首先 下
 ```s
 $ export DATA_SOURCE_NAME='root:123456@(192.168.0.107:3306)/'
 $ ./mysqld_exporter
-```sql
+```
 另一种方式是通过配置文件，默认的配置文件是 ~/.my.cnf，或者通过 --config.my-cnf 参数指定：
 
 ```s
@@ -20,13 +20,13 @@ host=localhost
 port=3306
 user=root
 password=123456
-```sql
+```
 这里为简单起见，在 mysqld_exporter 中直接使用了 root 连接数据库，在真实环境中，可以为 mysqld_exporter 创建一个单独的用户，并赋予它受限的权限（PROCESS、REPLICATION CLIENT、SELECT），最好还限制它的最大连接数（MAX_USER_CONNECTIONS）。
 
 ```s
 CREATE USER 'exporter'@'localhost' IDENTIFIED BY 'password' WITH MAX_USER_CONNECTIONS 3;
 GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'exporter'@'localhost';
-```sql
+```
 # 收集 Nginx 指标
 
 官方提供了两种收集 Nginx 指标的方式。第一种是 Nginx metric library，这是一段 Lua 脚本（prometheus.lua），Nginx 需要开启 Lua 支持（libnginx-mod-http-lua 模块）。为方便起见，也可以使用 OpenResty 的 OPM（OpenResty Package Manager）或者 luarocks（The Lua package manager）来安装。第二种是 Nginx VTS exporter，这种方式比第一种要强大的多，安装要更简单，支持的指标也更丰富，它依赖于 nginx-module-vts 模块，vts 模块可以提供大量的 Nginx 指标数据，可以通过 JSON、HTML 等形式查看这些指标。Nginx VTS exporter 就是通过抓取 /status/format/json 接口来将 vts 的数据格式转换为 Prometheus 的格式。不过，在 nginx-module-vts 最新的版本中增加了一个新接口：/status/format/prometheus，这个接口可以直接返回 Prometheus 的格式。
@@ -41,9 +41,9 @@ JMX Exporter 用于收集 JMX 指标，很多使用 Java 的系统，都可以�
 
 ```sh
 $ java -javaagent:jmx_prometheus_javaagent-0.3.1.jar=9404:config.yml -jar spring-boot-sample-1.0-SNAPSHOT.jar
-```sql
+```
 其中，9404 是 JMX Exporter 暴露指标的端口，`config.yml` 是 JMX Exporter 的配置文件，它的内容可以 [参考 JMX Exporter 的配置说明](https://github.com/prometheus/jmx_exporter#configuration)。然后检查下指标数据是否正确获取：
 
 ```s
 $ curl http://localhost:9404/metrics
-```sql
+```

@@ -10,7 +10,7 @@ Redis Cluster 采用虚拟槽进行分区，槽是集群内数据管理和迁移
 
 ```shell
 HASH_SLOT = CRC16(key) mod 16384
-```sql
+```
 假设现在有一个 6 个节点的集群，分别有 3 个 Master 点和 3 个 Slave 节点，槽会尽量均匀的分布在所有 Master 节点上。数据经过散列后存储在指定的 Master 节点上，之后 Slave 节点会进行对应的复制操作。这里再次说明一下槽只是一个虚拟的概念，并不是数据存放的实际载体。
 
 <div align="center"> <img src="https://gitee.com/heibaiying/Full-Stack-Notes/raw/master/pictures/redis-集群架构.png"/> </div>
@@ -100,7 +100,7 @@ cluster-node-timeout 15000
 cluster-config-file nodes-6480.conf
 
 ..... 其他配置类似，修改所有用到端口号的地方
-```sql
+```
 ### 2.2 启动集群
 
 启动所有 Redis 节点，启动后使用 `ps -ef | grep redis` 查看进程，输出应如下：
@@ -111,7 +111,7 @@ cluster-config-file nodes-6480.conf
 ```shell
 redis-cli --cluster create 127.0.0.1:6479 127.0.0.1:6480 127.0.0.1:6481 \
 127.0.0.1:6482 127.0.0.1:6483  127.0.0.1:6484 --cluster-replicas 1
-```sql
+```
 执行后输出如下：M 开头的表示持有槽的主节点，S 开头的表示从节点，每个节点都有一个唯一的 ID。最后一句输出表示所有的槽都已经分配到主节点上，此时代表集群搭建成功。
 
 <div align="center"> <img src="https://gitee.com/heibaiying/Full-Stack-Notes/raw/master/pictures/redis-cluster-create.png"/> </div>
@@ -122,7 +122,7 @@ redis-cli --cluster create 127.0.0.1:6479 127.0.0.1:6480 127.0.0.1:6481 \
 
 ```shell
 redis-cli --cluster check 127.0.0.1:6479
-```sql
+```
 ### 2.4 关于版本差异的说明
 
 如果你使用的是 Redis 5，可以和上面的示例一样，直接使用嵌入到 redis-cli 中的 Redis Cluster 命令来创建和管理集群。
@@ -139,12 +139,12 @@ Redis 集群提供了灵活的节点扩容和缩容方案，可以在不影响�
 
 ```shell
 redis-cli --cluster add-node 127.0.0.1:6485 127.0.0.1:6479
-```sql
+```
 成功加入集群后，可以使用 `cluster nodes` 命令查看集群情况。不做任何特殊指定，默认加入集群的节点都是主节点，但是集群并不会为分配任何槽。如下图所示，其他 master 节点后面都有对应的槽的位置信息，但新加入的 6485 节点则没有，由于没有负责的槽，所以该节点此时不能进行任何读写操作：
 
 ```shell
 redis-cli -h 127.0.0.1 -p 6479 cluster nodes
-```sql
+```
 <div align="center"> <img src="https://gitee.com/heibaiying/Full-Stack-Notes/raw/master/pictures/redis-cluster-nodes.png"/> </div>
 
 想要让新加入的节点能够进行读写操作，可以使用 `reshard` 命令为其分配槽，这里我们将其他三个主节点上的槽迁移一部分到 6485 节点上，这里一共迁移 4096 个槽，即 16384 除以 4 。`cluster-from` 用于指明槽的源节点，可以为多个，`cluster-to` 为槽的目标节点，`cluster-slots` 为需要迁移的槽的总数：
@@ -154,7 +154,7 @@ redis-cli --cluster reshard 127.0.0.1:6479 \
 --cluster-from fd35b17ace0f15314ed3b3d4f8ff4da08e11b89d,ebd0425db25b8bcf843fee9826755848e23a895a,98a175734db4a106ae676dc403f39b2783640789 \
 --cluster-to 819f867afd1da1acfb1a528d3efa91cffb02ba97 \
 --cluster-slots 4096 --cluster-yes
-```sql
+```
 迁移后，再次使用 `cluster nodes` 命令可以查看到此时 6485 上已经有其他三个主节点上迁移过来的槽：
 
 <div align="center"> <img src="https://gitee.com/heibaiying/Full-Stack-Notes/raw/master/pictures/redis-cluster-nodes2.png"/> </div>
@@ -164,14 +164,14 @@ redis-cli --cluster reshard 127.0.0.1:6479 \
 ```shell
 redis-cli --cluster add-node 127.0.0.1:6486 127.0.0.1:6479 --cluster-slave \
 --cluster-master-id 819f867afd1da1acfb1a528d3efa91cffb02ba97
-```sql
+```
 ### 3.2 集群缩容
 
 集群缩容的命令如下：第一个参数为集群内任意节点，用于发现集群；第二个参数为需要删除的节点：
 
 ```sql
 redis-cli --cluster del-node 127.0.0.1:6479 `<node-id>`
-```sql
+```
 需要注意的是待删除的主节点上必须为空，如果不为空则需要将它上面的槽和数据迁移到其他节点上，和扩容时一样，可以使用 `reshard` 命令来完成数据迁移。
 
 ## 参考资料

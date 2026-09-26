@@ -60,7 +60,7 @@ sqlite> .tables
 users
 sqlite> .exit
 ~
-```sql
+```
 为此，我们的 `main` 函数应有一个无限循环，这个循环打印提示，获取输入，然后处理输入：
 
 ```c
@@ -78,7 +78,7 @@ int main(int argc, char* argv[]) {
     }
   }
 }
-```sql
+```
 我们将 `InputBuffer` 定义为一个围绕状态存储的小包装，以便和 [getline()](http://man7.org/linux/man-pages/man3/getline.3.html) 函数进行交互（稍后详细介绍）
 
 ```c
@@ -96,17 +96,17 @@ InputBuffer* new_input_buffer() {
 
   return input_buffer;
 }
-```sql
+```
 接着，`print_prompt()` 打印一个提示给用户。我们在读每一行输入之前都要进行这个操作。
 
 ```c
 void print_prompt() { printf("db > "); }
-```sql
+```
 如果要读取一行输入，那就使用 [getline()](http://man7.org/linux/man-pages/man3/getline.3.html)：
 
 ```sql
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
-```sql
+```
 `lineptr`：一个指向字符串的指针，我们用来指向包含读取行的缓冲区。如果将它设置为 NULL，那它就将由 getline 分配，因此即使命令失败，也应由用户释放。
 
 `n`：一个指向用于保存为缓冲区分配的大小的变量的指针。
@@ -133,7 +133,7 @@ void read_input(InputBuffer* input_buffer) {
   input_buffer->input_length = bytes_read - 1;
   input_buffer->buffer[bytes_read - 1] = 0;
 }
-```sql
+```
 现在定义一个释放为 `InputBuffer *` 实例分配的内存和响应结构的 `buffer` 元素（`getline` 在 `read_input` 中为 `input_buffer->buffer` 分配的内存）
 
 ```c
@@ -141,7 +141,7 @@ void close_input_buffer(InputBuffer* input_buffer) {
     free(input_buffer->buffer);
     free(input_buffer);
 }
-```sql
+```
 最后，我们解析并执行命令。现在只有一个可识别的命令：.exit，它将终止程序。否则，我们将显示错误消息并继续循环。
 
 ```c
@@ -151,7 +151,7 @@ if (strcmp(input_buffer->buffer, ".exit") == 0) {
 } else {
   printf("Unrecognized command '%s'.\n", input_buffer->buffer);
 }
-```sql
+```
 来试试！
 
 ```sql
@@ -160,7 +160,7 @@ db > .tables
 Unrecognized command '.tables'.
 db > .exit
 ~
-```sql
+```
 好了，我们有一个有效的 REPL。在下一部分中，我们将开始开发命令语言。同时，这是此部分中的整个程序：
 
 ```c
@@ -219,4 +219,4 @@ int main(int argc, char* argv[]) {
     }
   }
 }
-```sql
+```

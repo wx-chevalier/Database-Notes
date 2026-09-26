@@ -26,7 +26,7 @@ dbfilename dump.rdb
 #
 # Note that you must specify a directory here, not a file name.
 dir /var/lib/redis
-```sql
+```
 # Links
 
 - https://cubox.pro/c/uACwYC Redis 专题：万字长文详解持久化原理
