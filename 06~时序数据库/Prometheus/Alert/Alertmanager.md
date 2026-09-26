@@ -9,14 +9,12 @@ alerting:
     static_configs:
     - targets:
       - "192.168.0.107:9093"
-```
-
+```sql
 这个配置告诉 Prometheus，当发生告警时，将告警信息发送到 Alertmanager，Alertmanager 的地址为 http://192.168.0.107:9093。也可以使用命名行的方式指定 Alertmanager：
 
 ```s
 $ ./prometheus -alertmanager.url=http://192.168.0.107:9093
-```
-
+```sql
 # 告警信息推送
 
 默认的配置文件 alertmanager.yml：
@@ -41,8 +39,7 @@ inhibit_rules:
     target_match:
       severity: "warning"
     equal: ["alertname", "dev", "instance"]
-```
-
+```sql
 其中 global 块表示一些全局配置；route 块表示通知路由，可以根据不同的标签将告警通知发送给不同的 receiver，这里没有配置 routes 项，表示所有的告警都发送给下面定义的 web.hook 这个 receiver；如果要配置多个路由，可以参考 这个例子：
 
 ```yml
@@ -56,8 +53,7 @@ routes:
     group_by: [product, environment]
     match:
       team: frontend
-```
-
+```sql
 紧接着，receivers 块表示告警通知的接收方式，每个 receiver 包含一个 name 和一个 xxx_configs，不同的配置代表了不同的接收方式，Alertmanager 内置了下面这些接收方式：
 
 - email_config

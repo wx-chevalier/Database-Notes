@@ -39,4 +39,4 @@ Redis 默认采用 LZF 算法对生成的 RDB 文件做压缩处理，这样可�
 
 ```shell
 config set rdbcompression{yes|no}
-```
+```sql

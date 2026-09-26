@@ -22,8 +22,7 @@ labels:
 # Annotations to add to each alert.
 annotations:
   [ <labelname>: <tmpl_string> ]
-```
-
+```sql
 告警规则的例子为：
 
 ```yml
@@ -59,6 +58,5 @@ groups:
         annotations:
         summary: "High request latency on {{ $labels.instance }}"
         description: "{{ $labels.instance }} has a median request latency above 1s (current value: {{ $value }}s)"
-```
-
+```sql
 这个规则文件里，包含了两条告警规则：`InstanceDown` 和 `APIHighRequestLatency`。顾名思义，InstanceDown 表示当实例宕机时（up === 0）触发告警，APIHighRequestLatency 表示有一半的 API 请求延迟大于 1s 时（api_http_request_latencies_second{quantile="0.5"} > 1）触发告警。配置好后，需要重启下 Prometheus server，然后访问 `http://localhost:9090/rules` 可以看到刚刚配置的规则。

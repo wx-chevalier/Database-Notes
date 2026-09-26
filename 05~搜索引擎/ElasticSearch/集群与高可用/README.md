@@ -11,8 +11,7 @@ $ sysctl -w vm.max_map_count=262144
 
 # 持久化配置信息
 $ echo 'vm.max_map_count=262144' >> /etc/sysctl.conf
-```
-
+```sql
 ```sh
 # 将服务部署到 Swarm 集群中
 $ docker stack deploy -c $(pwd)/docker-compose.yml elk
@@ -22,8 +21,7 @@ $ docker service ls
 
 # Scale out the service to include more replicas:
 $ docker service update --replicas=3 <replica_id>
-```
-
+```sql
 ## 多集群
 
 # Links

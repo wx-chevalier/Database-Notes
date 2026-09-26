@@ -24,8 +24,7 @@
 
 ```shell
 slaveof {newMasterIp} {newMasterPort}
-```
-
+```sql
 需要注意的是，当你从一个主节点切换到另外一个主节点时，该从节点上的原有的数据会被完全清除，然后再执行复制操作，从而保证该从节点上的数据和新主节点上的数据相同。
 
 ### 1.3 复制机制缺陷
@@ -86,7 +85,6 @@ logfile 6379.log
 dbfilename dump-6379.rdb
 dir /home/redis/data/
 
-
 # redis-6380.conf
 port 6380
 daemonize yes
@@ -104,8 +102,7 @@ logfile 6381.log
 dbfilename dump-6381.rdb
 dir /home/redis/data/
 slaveof 127.0.0.1 6379
-```
-
+```sql
 ### 3.2 配置 Sentinel
 
 拷贝三份 `sentinel.conf` ，分别命名为 sentinel-26379.conf ，sentinel-26380.conf ，sentinel-26381.conf ，配置如下：
@@ -140,8 +137,7 @@ sentinel monitor mymaster 127.0.0.1 6379 2
 sentinel down-after-milliseconds mymaster 30000
 sentinel parallel-syncs mymaster 1
 sentinel failover-timeout mymaster 180000
-```
-
+```sql
 ### 3.3 启动集群
 
 分别启动三个 Redis 节点，命令如下：
@@ -150,16 +146,14 @@ sentinel failover-timeout mymaster 180000
 redis-server redis-6379.conf
 redis-server redis-6380.conf
 redis-server redis-6381.conf
-```
-
+```sql
 分别启动三个 Sentinel 节点，命令如下：
 
 ```shell
 redis-sentinel sentinel-26379.conf
 redis-sentinel sentinel-26380.conf
 redis-sentinel sentinel-26381.conf
-```
-
+```sql
 使用 `ps -ef | grep redis` 命令查看进程，此时输出应该如下：
 
 <div align="center"> <img src="https://gitee.com/heibaiying/Full-Stack-Notes/raw/master/pictures/redis-sentinel-ps-ef.png"/> </div>

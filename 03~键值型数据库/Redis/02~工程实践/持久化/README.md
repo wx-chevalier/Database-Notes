@@ -13,7 +13,7 @@ Redis 提供了多种不同级别的持久化方式:一种是 RDB,另一种是 A
 
 一般来说,如果想达到足以媲美 PostgreSQL 的数据安全性，你应该同时使用两种持久化功能。如果你非常关心你的数据,但仍然可以承受数分钟以内的数据丢失，那么你可以只使用 RDB 持久化。有很多用户都只使用 AOF 持久化，但我们并不推荐这种方式: 因为定时生成 RDB 快照(snapshot)非常便于进行数据库备份，并且 RDB 恢复数据集的速度也要比 AOF 恢复的速度要快，除此之外，使用 RDB 还可以避免之前提到的 AOF 程序的 bug。因为以上提到的种种原因，未来我们可能会将 AOF 和 RDB 整合成单个持久化模型。(这是一个长期计划。)
 
-```
+```sql
 # The filename where to dump the DB
 dbfilename dump.rdb
 
@@ -26,8 +26,7 @@ dbfilename dump.rdb
 #
 # Note that you must specify a directory here, not a file name.
 dir /var/lib/redis
-```
-
+```sql
 # Links
 
 - https://cubox.pro/c/uACwYC Redis 专题：万字长文详解持久化原理

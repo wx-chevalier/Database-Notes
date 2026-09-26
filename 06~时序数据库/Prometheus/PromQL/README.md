@@ -24,8 +24,7 @@ up{instance="192.168.0.108:9104",job="mysql"}    0
 
 # 指定某个 label
 up{job="prometheus"}
-```
-
+```sql
 这种写法被称为 Instant vector selectors，这里不仅可以使用 = 号，还可以使用 !=、=~、!~，比如下面这样：
 
 ```sh
@@ -34,8 +33,7 @@ up{job!="prometheus"}
 # =~ 是根据正则表达式来匹配，必须符合 RE2 的语法。
 up{job=~"server|mysql"}
 up{job=~"192\.168\.0\.107.+"}
-```
-
+```sql
 ## 典型查询
 
 这里我们列举了一些常见的 PromQL 查询，及其与 SQL 的对比：
@@ -76,4 +74,4 @@ select * from http_requests_total where timestamp between xxxx and xxxx order by
 # irate查询：速率查询
 irate(http_requests_total[5m])
 select code, handler, instance, job, method, sum(value)/300 AS value from http_requests_total where timestamp between xxxx and xxxx group by code, handler, instance, job, method;
-```
+```sql

@@ -14,7 +14,7 @@ SQL Server 2016 有望提供 JSON 操作原生支持。这一支持的首次迭�
 
 下面是[Jovan Popovic 博文中关于 JSON 支持](http://blogs.msdn.com/b/jocapc/archive/2015/05/16/json-support-in-sql-server-2016.aspx)的例子。
 
-```
+```sql
 DECLARE @JSalestOrderDetails nVarCar(2000) = N '{"OrdersArray": [
 {"Number":1, "Date": "8/10/2012", "Customer": "Adventure works", "Quantity": 1200},
 {"Number":4, "Date": "5/11/2012", "Customer": "Adventure works", "Quantity": 100},
@@ -30,8 +30,7 @@ WITH (
     Customer varchar(200),
     Quantity int
 ) AS OrdersArray
-```
-
+```sql
 微软宣称，在 PostgrSQL 中实现同样的功能需要综合使用 json_each、json_object_keys、json_populate_record 和 json_populate_recordset 函数。
 
 **JSON 存储**
